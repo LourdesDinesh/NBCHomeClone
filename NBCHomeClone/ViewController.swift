@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private let HOME_API:String = "https://demo3978672.mockable.io/";
+    private let HOME_API:String = "https://www.nbcnewyork.com/apps/news-app/home/modules/?apiVersion=18&os=ios#";
+    private var homeDataModel:Home = Home();
     let dispatchGroup:DispatchGroup = DispatchGroup();
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class ViewController: UIViewController {
     public func fetchData() {
         dispatchGroup.enter();
         FetchDataFromAPI.getJsonArrayFromApi(fromUrl: HOME_API) {[weak self] (home:Home) in
-            print(home.msg!);
+            self?.homeDataModel = home;
             self?.dispatchGroup.leave();
         }
     }
@@ -32,4 +33,3 @@ class ViewController: UIViewController {
         
     }
 }
-

@@ -8,5 +8,23 @@
 
 import Foundation
 struct Home:Decodable {
-    var msg:String!;
+    var modules:[Modules]!;
+}
+
+struct Modules:Decodable {
+    var template:String!;
+    var pageTitle:String!;
+    var typeName:String!;
+    var listSize:Int!;
+    var type:String!;
+    var location:String!;
+    var items:[Items];
+}
+
+struct Items:Decodable {
+    var typeName:String!;
+    var title:String!;
+    var thumbnailImageURL:String!;
+    var shortTimestamp:String!;
+    var sponsored:Bool;
 }
