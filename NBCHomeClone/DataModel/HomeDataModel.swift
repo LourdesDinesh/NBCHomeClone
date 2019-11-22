@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct Home:Decodable {
+struct HomeDataModel:Decodable {
     var modules:[Modules]!;
 }
 
