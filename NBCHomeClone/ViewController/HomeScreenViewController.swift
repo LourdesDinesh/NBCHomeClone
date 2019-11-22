@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeScreenViewController: UIViewController {
     private let HOME_API:String = "https://www.nbcnewyork.com/apps/news-app/home/modules/?apiVersion=18&os=ios#";
-    private var homeDataModel:Home = Home();
+    private var homeDataModel:HomeDataModel = HomeDataModel();
     let dispatchGroup:DispatchGroup = DispatchGroup();
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,9 @@ class ViewController: UIViewController {
     
     public func fetchData() {
         dispatchGroup.enter();
-        FetchDataFromAPI.getJsonArrayFromApi(fromUrl: HOME_API) {[weak self] (home:Home) in
-            self?.homeDataModel = home;
+        FetchDataFromAPI.getJsonArrayFromApi(fromUrl: HOME_API) {[weak self] (homeData:HomeDataModel) in
+            print(homeData);
+            self?.homeDataModel = homeData;
             self?.dispatchGroup.leave();
         }
     }
