@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="sectionTitle" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="Jid-ta-f8W" customClass="SectionNameTableviewCell" customModule="NBCHomeClone" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="sectionTitle" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sectionTitleCell" rowHeight="60" id="Jid-ta-f8W" customClass="SectionNameTableviewCell" customModule="NBCHomeClone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jid-ta-f8W" id="jLV-Hq-Xkg">
@@ -47,7 +47,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="Mmk-en-iNZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="seeMoreTitleCell" rowHeight="60" id="Mmk-en-iNZ">
                                         <rect key="frame" x="0.0" y="88" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mmk-en-iNZ" id="9Ta-A8-vMw">
@@ -75,18 +75,18 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="111" id="ejA-CB-QP7" customClass="ListTableViewCell" customModule="NBCHomeClone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="148" width="414" height="111"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listViewNewsCell" rowHeight="110" id="ejA-CB-QP7" customClass="ListTableViewCell" customModule="NBCHomeClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="148" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ejA-CB-QP7" id="phQ-dA-9AZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnn-0U-P6a">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jQ2-fx-cv5">
-                                                            <rect key="frame" x="13" y="13" width="130" height="73"/>
+                                                            <rect key="frame" x="13" y="13" width="130" height="84"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="73" id="JTY-49-0lC"/>
                                                                 <constraint firstAttribute="width" constant="130" id="Tss-cZ-6oE"/>
@@ -107,6 +107,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="jQ2-fx-cv5" secondAttribute="bottom" constant="13" id="5e3-hV-6Oh"/>
                                                         <constraint firstItem="IhI-IM-FYC" firstAttribute="top" secondItem="ydg-Hz-w1C" secondAttribute="bottom" constant="3" id="6uY-xb-n90"/>
                                                         <constraint firstAttribute="trailing" secondItem="IhI-IM-FYC" secondAttribute="trailing" constant="14" id="D0d-lN-Djo"/>
                                                         <constraint firstItem="ydg-Hz-w1C" firstAttribute="leading" secondItem="jQ2-fx-cv5" secondAttribute="trailing" constant="14" id="GVl-63-fdB"/>
@@ -126,8 +127,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="articleHeadline" destination="IhI-IM-FYC" id="HF3-Wm-x2Q"/>
-                                            <outlet property="sponsoredTitle" destination="ydg-Hz-w1C" id="Ce9-hE-GUu"/>
                                             <outlet property="thumaNailImageView" destination="jQ2-fx-cv5" id="RoU-M0-giM"/>
+                                            <outlet property="updatedTime" destination="ydg-Hz-w1C" id="sEC-U2-cHO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -142,6 +143,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="newsTableView" destination="pNt-Z6-3qc" id="hT7-3z-jME"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

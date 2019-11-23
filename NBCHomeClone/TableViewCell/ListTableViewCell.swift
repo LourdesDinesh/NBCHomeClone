@@ -13,6 +13,8 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var thumaNailImageView: UIImageView!
     @IBOutlet weak var updatedTime: UILabel!
     @IBOutlet weak var articleHeadline: UILabel!
+    
+    static let REUSABLE_IDENTIFIER:String = "listViewNewsCell";
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
