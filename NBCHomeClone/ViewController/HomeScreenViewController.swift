@@ -10,6 +10,8 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
     @IBOutlet weak var newsTableView: UITableView!
+    let leadImageSectionIdentifier = "LeadImage"
+    
     private let HOME_API:String = "https://www.nbcnewyork.com/apps/news-app/home/modules/?apiVersion=18&os=ios#";
     private var homeDataModel:HomeDataModel?
     let dispatchGroup:DispatchGroup = DispatchGroup();
@@ -55,3 +57,22 @@ class HomeScreenViewController: UIViewController {
 //        return cell;
 //    }
 //}
+extension HomeScreenViewController:UITableViewDelegate,UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+    let cell = tableView.dequeueReusableCell(withIdentifier: leadImageSectionIdentifier) as! LeadImageTableViewCell
+        setGradientBackground(view:cell.gradientLayer)
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150.0
+    }
+    
+}
