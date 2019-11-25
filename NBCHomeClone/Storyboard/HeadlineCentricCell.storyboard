@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m8V-bp-2Ys">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="j8D-po-yGx">
+            <objects>
+                <viewController id="m8V-bp-2Ys" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2aN-Ox-sG8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t8K-rk-I4Q">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="headlineCentricTableViewCell" rowHeight="74" id="ptJ-qY-EK1" customClass="HeadlineCentricTableViewCell" customModule="NBCHomeClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ptJ-qY-EK1" id="q17-5H-zHr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jt4-Rd-PWk">
+                                                    <rect key="frame" x="14" y="3" width="366" height="12.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playOverlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cTK-go-AKq">
+                                                    <rect key="frame" x="14" y="20.5" width="14" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="cTK-go-AKq" secondAttribute="height" multiplier="1:1" id="IcU-X4-b6c"/>
+                                                        <constraint firstAttribute="height" constant="14" id="dks-Bp-X4x"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMp-Nd-fcI">
+                                                    <rect key="frame" x="14" y="20.5" width="366" height="33.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="This is a Headline centric cell and this cell can have a title with maximum of two lines">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="menu" size="14"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cTK-go-AKq" firstAttribute="leading" secondItem="q17-5H-zHr" secondAttribute="leading" constant="14" id="A9E-s5-zSQ"/>
+                                                <constraint firstItem="Jt4-Rd-PWk" firstAttribute="top" secondItem="q17-5H-zHr" secondAttribute="top" constant="3" id="KGf-kK-3iy"/>
+                                                <constraint firstItem="cTK-go-AKq" firstAttribute="top" secondItem="cMp-Nd-fcI" secondAttribute="top" id="XCD-Nu-F1L"/>
+                                                <constraint firstItem="cMp-Nd-fcI" firstAttribute="top" secondItem="Jt4-Rd-PWk" secondAttribute="bottom" constant="5" id="gLM-DA-gQ1"/>
+                                                <constraint firstItem="cMp-Nd-fcI" firstAttribute="centerY" secondItem="q17-5H-zHr" secondAttribute="centerY" id="nRo-N9-bwN"/>
+                                                <constraint firstItem="Jt4-Rd-PWk" firstAttribute="trailing" secondItem="cMp-Nd-fcI" secondAttribute="trailing" id="qBw-HO-m7U"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cMp-Nd-fcI" secondAttribute="trailing" constant="14" id="ree-d2-2XJ"/>
+                                                <constraint firstItem="Jt4-Rd-PWk" firstAttribute="leading" secondItem="cMp-Nd-fcI" secondAttribute="leading" id="svc-C9-cdD"/>
+                                                <constraint firstItem="cMp-Nd-fcI" firstAttribute="leading" secondItem="q17-5H-zHr" secondAttribute="leading" constant="14" id="zHz-5h-0y2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="articleTitle" destination="cMp-Nd-fcI" id="Kn4-DF-jE5"/>
+                                            <outlet property="articleTypeImage" destination="cTK-go-AKq" id="bda-Ay-1Ky"/>
+                                            <outlet property="updatedTime" destination="Jt4-Rd-PWk" id="3GK-cz-OlI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zbj-NQ-h2Y" firstAttribute="bottom" secondItem="t8K-rk-I4Q" secondAttribute="bottom" id="TYQ-Ly-Inh"/>
+                            <constraint firstItem="Zbj-NQ-h2Y" firstAttribute="trailing" secondItem="t8K-rk-I4Q" secondAttribute="trailing" id="UHv-FU-oi9"/>
+                            <constraint firstItem="t8K-rk-I4Q" firstAttribute="leading" secondItem="Zbj-NQ-h2Y" secondAttribute="leading" id="XWZ-Yf-VwP"/>
+                            <constraint firstItem="t8K-rk-I4Q" firstAttribute="top" secondItem="Zbj-NQ-h2Y" secondAttribute="top" id="qB6-qs-KnS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zbj-NQ-h2Y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SAS-JQ-LVo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65.217391304347828" y="-81.026785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="playOverlayIcon" width="8.5" height="12"/>
+    </resources>
+</document>
