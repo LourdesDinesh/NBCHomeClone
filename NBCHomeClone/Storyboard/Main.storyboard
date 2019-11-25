@@ -18,52 +18,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ldR-Rb-qcW">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listViewNewsCell" rowHeight="111" id="Kti-Tm-g9B" customClass="ListTableViewCell" customModule="NBCHomeClone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="111"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kti-Tm-g9B" id="8ht-nd-mbH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SQJ-YD-fbH">
-                                                    <rect key="frame" x="11" y="13" width="130" height="87"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="ByE-Ef-myh"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="here's a 5 imagesto inspire a trip to walt disney" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B76-a7-JNB">
-                                                    <rect key="frame" x="155" y="29" width="245" height="33.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVf-Rl-lIN">
-                                                    <rect key="frame" x="155" y="14" width="68" height="12"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="B76-a7-JNB" firstAttribute="top" secondItem="8ht-nd-mbH" secondAttribute="top" constant="29" id="D1C-cD-dMC"/>
-                                                <constraint firstAttribute="bottom" secondItem="SQJ-YD-fbH" secondAttribute="bottom" constant="11" id="Dpu-CH-LRy"/>
-                                                <constraint firstItem="SQJ-YD-fbH" firstAttribute="top" secondItem="8ht-nd-mbH" secondAttribute="top" constant="13" id="IHz-os-WbG"/>
-                                                <constraint firstAttribute="trailing" secondItem="B76-a7-JNB" secondAttribute="trailing" constant="14" id="IL3-xf-0oG"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="B76-a7-JNB" secondAttribute="bottom" constant="48.5" id="IZY-Ru-OZJ"/>
-                                                <constraint firstItem="SQJ-YD-fbH" firstAttribute="leading" secondItem="8ht-nd-mbH" secondAttribute="leading" constant="11" id="Zxn-Al-2OG"/>
-                                                <constraint firstItem="YVf-Rl-lIN" firstAttribute="top" secondItem="8ht-nd-mbH" secondAttribute="top" constant="14" id="bXi-Fs-fzZ"/>
-                                                <constraint firstItem="B76-a7-JNB" firstAttribute="leading" secondItem="YVf-Rl-lIN" secondAttribute="leading" id="lZY-2i-Jys"/>
-                                                <constraint firstItem="B76-a7-JNB" firstAttribute="leading" secondItem="SQJ-YD-fbH" secondAttribute="trailing" constant="14" id="nUZ-QC-uzb"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="articleHeadline" destination="B76-a7-JNB" id="W6K-eK-hqs"/>
-                                            <outlet property="thumaNailImageView" destination="SQJ-YD-fbH" id="0Cb-lq-Ohe"/>
-                                            <outlet property="updatedTime" destination="YVf-Rl-lIN" id="Uiw-H6-jIH"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

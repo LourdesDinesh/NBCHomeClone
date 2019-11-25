@@ -10,6 +10,7 @@
 		5E390798238BCA5D00304580 /* HeadlineCentricCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E390797238BCA5D00304580 /* HeadlineCentricCell.storyboard */; };
 		5E39079A238BD09800304580 /* HeadlineCentricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E390799238BD09800304580 /* HeadlineCentricTableViewCell.swift */; };
 		5E39079F238BE0ED00304580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E390795238BABC400304580 /* Main.storyboard */; };
+		5E51B46A238BE6BA00F7763A /* ListTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E51B469238BE6BA00F7763A /* ListTableViewCell.storyboard */; };
 		5E81FCFE238545E2006BA434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81FCFD238545E2006BA434 /* AppDelegate.swift */; };
 		5E81FD00238545E2006BA434 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81FCFF238545E2006BA434 /* SceneDelegate.swift */; };
 		5E81FD02238545E2006BA434 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81FD01238545E2006BA434 /* HomeScreenViewController.swift */; };
@@ -29,6 +30,7 @@
 		5E390795238BABC400304580 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5E390797238BCA5D00304580 /* HeadlineCentricCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeadlineCentricCell.storyboard; sourceTree = "<group>"; };
 		5E390799238BD09800304580 /* HeadlineCentricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineCentricTableViewCell.swift; sourceTree = "<group>"; };
+		5E51B469238BE6BA00F7763A /* ListTableViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListTableViewCell.storyboard; sourceTree = "<group>"; };
 		5E81FCFA238545E2006BA434 /* NBCHomeClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NBCHomeClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E81FCFD238545E2006BA434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E81FCFF238545E2006BA434 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		8F92222523857CBC0097D290 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				5E51B469238BE6BA00F7763A /* ListTableViewCell.storyboard */,
 				5E390795238BABC400304580 /* Main.storyboard */,
 				5E390797238BCA5D00304580 /* HeadlineCentricCell.storyboard */,
 			);
@@ -205,6 +208,7 @@
 			files = (
 				5E81FD0A238545E4006BA434 /* LaunchScreen.storyboard in Resources */,
 				5E81FD07238545E4006BA434 /* Assets.xcassets in Resources */,
+				5E51B46A238BE6BA00F7763A /* ListTableViewCell.storyboard in Resources */,
 				5E390798238BCA5D00304580 /* HeadlineCentricCell.storyboard in Resources */,
 				5E39079F238BE0ED00304580 /* Main.storyboard in Resources */,
 			);
