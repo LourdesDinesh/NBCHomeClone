@@ -9,7 +9,7 @@
 import UIKit
 
 class SeeMoreTableViewCell: UITableViewCell {
-
+    public static let REUSABLE_IDENTIFIER:String = "seeMoreCellReusableIdentifier";
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,7 +17,6 @@ class SeeMoreTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

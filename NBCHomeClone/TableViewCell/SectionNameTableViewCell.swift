@@ -10,6 +10,8 @@ import UIKit
 
 class SectionNameTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var sectionName: UILabel!
+    public static let REUSABLE_IDENTIFIER:String = "sectionNameTableViewCell";
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,8 +19,14 @@ class SectionNameTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-
+    
+    public func setValue(title:String) {
+        setTitle(title)
+    }
+    
+    private func setTitle(_ title:String) {
+        sectionName.text = title
+    }
 }

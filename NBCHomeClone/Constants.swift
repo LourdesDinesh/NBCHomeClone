@@ -7,3 +7,9 @@
 //
 
 import Foundation
+struct  Constants {
+    struct ArticleTypes {
+        public static let VIDEO:String = "Video";
+        public static let ARTICLE:String = "Article";
+    }
+}

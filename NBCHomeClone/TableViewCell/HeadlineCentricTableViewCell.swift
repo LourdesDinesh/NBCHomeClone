@@ -38,7 +38,7 @@ class HeadlineCentricTableViewCell: UITableViewCell {
             articleTypeImage.isHidden = true;
             return;
         }
-        if(articleType == "Article") {
+        if(articleType == Constants.ArticleTypes.ARTICLE) {
             return;
         }
         articleTypeImage.isHidden = false;
