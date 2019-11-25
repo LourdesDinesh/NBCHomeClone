@@ -219,18 +219,48 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="178" translatesAutoresizingMaskIntoConstraints="NO" id="zgn-kI-Bka">
+                                                                        <rect key="frame" x="0.0" y="178" width="178" height="20.5"/>
+                                                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUN-9A-Aia">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="178" height="175"/>
+                                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YO4-6O-efg">
+                                                                        <rect key="frame" x="0.0" y="149" width="62.5" height="26"/>
+                                                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </imageView>
                                                                 </subviews>
                                                                 <constraints>
+                                                                    <constraint firstItem="YO4-6O-efg" firstAttribute="height" secondItem="wUN-9A-Aia" secondAttribute="height" multiplier="0.15" id="05L-kw-tCN"/>
+                                                                    <constraint firstItem="YO4-6O-efg" firstAttribute="leading" secondItem="Koh-S5-Zgx" secondAttribute="leading" id="4E2-tb-ra0"/>
+                                                                    <constraint firstItem="wUN-9A-Aia" firstAttribute="top" secondItem="Koh-S5-Zgx" secondAttribute="top" id="BOB-w1-4re"/>
+                                                                    <constraint firstItem="zgn-kI-Bka" firstAttribute="width" secondItem="e52-bJ-A7G" secondAttribute="width" id="Jay-v4-rM9"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="wUN-9A-Aia" secondAttribute="trailing" id="MWr-aT-kS6"/>
+                                                                    <constraint firstItem="wUN-9A-Aia" firstAttribute="leading" secondItem="Koh-S5-Zgx" secondAttribute="leading" id="QKB-Jc-Ha1"/>
+                                                                    <constraint firstItem="zgn-kI-Bka" firstAttribute="top" secondItem="wUN-9A-Aia" secondAttribute="bottom" constant="3" id="Uhn-8k-OhV"/>
+                                                                    <constraint firstItem="YO4-6O-efg" firstAttribute="width" secondItem="wUN-9A-Aia" secondAttribute="width" multiplier="0.35" id="Y6w-aZ-QjP"/>
+                                                                    <constraint firstItem="YO4-6O-efg" firstAttribute="bottom" secondItem="wUN-9A-Aia" secondAttribute="bottom" id="cy5-w6-uZO"/>
                                                                     <constraint firstAttribute="trailing" secondItem="e52-bJ-A7G" secondAttribute="trailing" id="eIX-b2-CmX"/>
+                                                                    <constraint firstItem="e52-bJ-A7G" firstAttribute="top" secondItem="zgn-kI-Bka" secondAttribute="bottom" constant="3" id="fMz-4x-tey"/>
                                                                     <constraint firstItem="e52-bJ-A7G" firstAttribute="leading" secondItem="Koh-S5-Zgx" secondAttribute="leading" id="gQK-hY-ttX"/>
                                                                     <constraint firstAttribute="bottom" secondItem="e52-bJ-A7G" secondAttribute="bottom" id="lJt-5j-xec"/>
+                                                                    <constraint firstItem="zgn-kI-Bka" firstAttribute="centerX" secondItem="e52-bJ-A7G" secondAttribute="centerX" id="xdG-3r-D1Z"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
                                                             <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <size key="customSize" width="178" height="222"/>
                                                             <connections>
+                                                                <outlet property="PhotocentricHeadImage" destination="wUN-9A-Aia" id="pF0-1T-up1"/>
                                                                 <outlet property="cellWidth" destination="wV2-1d-CKC" id="rcE-Jl-oQt"/>
                                                                 <outlet property="photoCentricCellTitlename" destination="e52-bJ-A7G" id="miH-ZN-kT1"/>
+                                                                <outlet property="photocentricArticleTitle" destination="e52-bJ-A7G" id="Qjr-nF-Zsk"/>
+                                                                <outlet property="photocentricArticletype" destination="YO4-6O-efg" id="42U-7R-YhA"/>
+                                                                <outlet property="photocentricUpdateStatus" destination="zgn-kI-Bka" id="DdZ-EY-z9R"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -267,10 +297,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qkh-st-vkG"/>
                     </view>
+                    <connections>
+                        <outlet property="sampletableview" destination="TwC-Dv-dhi" id="Q4C-uf-b4t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3R-fW-QQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1306" y="136"/>
+            <point key="canvasLocation" x="1305.7971014492755" y="135.9375"/>
         </scene>
     </scenes>
     <resources>

@@ -9,7 +9,8 @@
 import UIKit
 
 class PhotocentricViewController: UIViewController {
-
+    @IBOutlet weak var sampletableview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +39,6 @@ extension PhotocentricViewController : UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell" , for:    indexPath) as! photocentricTableviewCell
-                    //   cell.delegate = self
                        return cell
         
     }
