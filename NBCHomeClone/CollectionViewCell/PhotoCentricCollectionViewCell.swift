@@ -10,7 +10,31 @@ import UIKit
 
 class PhotoCentricCollectionViewCell: UICollectionViewCell {
     
-   
+    @IBOutlet weak var photocentricArticleTitle: UILabel!
+    @IBOutlet weak var photocentricUpdateStatus: UILabel!
+    
     @IBOutlet weak var cellWidth: NSLayoutConstraint!
     @IBOutlet weak var photoCentricCellTitlename: UILabel!
+    @IBOutlet weak var PhotocentricHeadImage: UIImageView!
+    
+    @IBOutlet weak var photocentricArticletype: UIImageView!
+    
+    
+    public func setValue(value:Items) {
+          setArticleTitle(title: value.title)
+          setHeadlineImage(imageUrl: value.thumbnailImageURL)
+          setUpdatedTime(value.shortTimestamp)
+      }
+      
+         private func setUpdatedTime(_ time:String) {
+             photocentricUpdateStatus.text = time;
+         }
+         
+         private func setArticleTitle(title:String) {
+             photocentricArticleTitle.text = title;
+         }
+         
+         private func setHeadlineImage(imageUrl:String) {
+             PhotocentricHeadImage.loadImageFromURLString(imageUrl);
+         }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class photocentricTableviewCell: UITableViewCell {
     @IBOutlet weak var photocentricCollectioview: UICollectionView!
-    
+      private var homeDataModel:HomeDataModel?
     override func awakeFromNib() {
         super.awakeFromNib()
        self.photocentricCollectioview.delegate = self
@@ -30,8 +30,6 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
 //
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionviewCellWidth : CGFloat  = (self.frame.size.width/2) - 20
-        print(collectionviewCellWidth)
-        print(self.frame.width)
         let collectionviewCellHeight : CGFloat  = (self.frame.height/2) - 20
         return CGSize(width: collectionviewCellWidth, height: collectionviewCellHeight)
        }
@@ -54,13 +52,12 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for:    indexPath) as! PhotoCentricCollectionViewCell
-       cell.photoCentricCellTitlename.text = "asdfgvfdgfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgf"
+//       cell.photoCentricCellTitlename.text = "asdfgvfdgfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgasdfgvfdgfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgfdfgdfgf"
         cell.cellWidth.constant = cell.frame.size.width
         cell.photoCentricCellTitlename.preferredMaxLayoutWidth = cell.frame.size.width
-      //  cell.photoCentricCellTitlename.sizeToFit()
-    
-                          //   cell.delegate = self
-                             return cell
+        
+            return cell;
+                    
     }
     
     
