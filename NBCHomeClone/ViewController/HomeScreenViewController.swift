@@ -10,23 +10,22 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
     @IBOutlet weak var newsTableView: UITableView!
-    let leadImageSectionIdentifier = "LeadImage"
-    
     private let HOME_API:String = "https://www.nbcnewyork.com/apps/news-app/home/modules/?apiVersion=18&os=ios#";
     private var homeDataModel:HomeDataModel?
     let dispatchGroup:DispatchGroup = DispatchGroup();
     override func viewDidLoad() {
         super.viewDidLoad()
         print("HomeViewController loaded");
-        setDataSource();
+        setDataSourceAndDelegate();
         fetchData();
         dispatchGroup.notify(queue: .main, execute: { [weak self] in
             self?.loadTableView();
         })
     }
     
-    private func setDataSource() {
+    private func setDataSourceAndDelegate() {
         newsTableView.dataSource = self
+        newsTableView.delegate = self
     }
     
     private func fetchData() {
@@ -46,17 +45,69 @@ class HomeScreenViewController: UIViewController {
 //ListCell Population
 extension HomeScreenViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1;
+        let numberOfSections = homeDataModel?.modules.count ?? 0
+        return numberOfSections
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let toReturn = homeDataModel?.modules[0].items.count ?? 0
-        return toReturn
+        let numberOfRows = homeDataModel?.modules[section].items.count ?? 0
+        return numberOfRows
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = newsTableView.dequeueReusableCell(withIdentifier: "listViewNewsCell") as! ListTableViewCell
-        cell.setValue(value: (homeDataModel?.modules[0].items[indexPath.row])!)
+        print(indexPath.section)
+        //LeadCell
+        if(indexPath.row == 0) {
+            let cell = newsTableView.dequeueReusableCell(withIdentifier: LeadImageTableViewCell.REUSABLE_IDENTIFIER) as! LeadImageTableViewCell;
+            cell.setValue(value: (homeDataModel?.modules[indexPath.section].items[indexPath.row])!)
+            return cell;
+        }
+        if(indexPath.section < 3) {
+            let cell = newsTableView.dequeueReusableCell(withIdentifier: ListTableViewCell.REUSABLE_IDENTIFIER) as! ListTableViewCell
+            cell.setValue(value: (homeDataModel?.modules[indexPath.section].items[indexPath.row])!)
+            return cell;
+        } else {
+            let cell = newsTableView.dequeueReusableCell(withIdentifier: HeadlineCentricTableViewCell.REUSABLE_IDENTITY) as! HeadlineCentricTableViewCell
+            cell.setValue(value: (homeDataModel?.modules[indexPath.section].items[indexPath.row])!)
+            return cell;
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.row == 0) {
+            return 200
+        } else {
+            return 111
+        }
+    }
+}
+
+extension HomeScreenViewController:UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: SectionNameTableViewCell.REUSABLE_IDENTIFIER) as! SectionNameTableViewCell
+        cell.setValue(title: (homeDataModel?.modules[section].pageTitle) ?? "")
+        return cell;
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if(homeDataModel?.modules[section].items.count == 0) {
+                   return 0
+        }
+        return 33
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if(homeDataModel?.modules[section].items.count == 0) {
+                   return 0
+        }
+        return 53
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if(homeDataModel?.modules[section].items.count == 0) {
+                   return nil
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: SeeMoreTableViewCell.REUSABLE_IDENTIFIER);
         return cell;
     }
 }

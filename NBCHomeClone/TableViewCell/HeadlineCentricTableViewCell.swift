@@ -34,15 +34,12 @@ class HeadlineCentricTableViewCell: UITableViewCell {
     }
     
     private func setArticleType(_ type:String!) {
-        guard let articleType = type else {
-            articleTypeImage.isHidden = true;
-            return;
-        }
-        if(articleType == Constants.ArticleTypes.ARTICLE) {
+        articleTypeImage.isHidden = true;
+        if(type == Constants.ArticleTypes.ARTICLE) {
             return;
         }
         articleTypeImage.isHidden = false;
-        let titleWithType:String = "    \(articleType)  |  \(articleTitle.text ?? "")"
+        let titleWithType:String = "    \(type ?? "")  |  \(articleTitle.text ?? "")"
         articleTitle.text = titleWithType;
     }
     

@@ -7,11 +7,11 @@
 //
 
 import Foundation
-struct HomeDataModel:Decodable {
+struct HomeDataModel:Codable {
     var modules:[Modules]!;
 }
 
-struct Modules:Decodable {
+struct Modules:Codable {
     var template:String!;
     var pageTitle:String!;
     var typeName:String!;
@@ -21,10 +21,15 @@ struct Modules:Decodable {
     var items:[Items];
 }
 
-struct Items:Decodable {
+struct Items:Codable {
     var typeName:String!;
     var title:String!;
     var thumbnailImageURL:String!;
     var shortTimestamp:String!;
-    var sponsored:Bool;
+    var sponsored:Bool!;
+    var leadMedia:LeadMedia?;
+}
+
+struct LeadMedia:Codable {
+    var typeName: String!;
 }

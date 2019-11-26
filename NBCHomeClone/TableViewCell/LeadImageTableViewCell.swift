@@ -31,7 +31,7 @@ class LeadImageTableViewCell: UITableViewCell {
         setImage(withUrl: value.thumbnailImageURL)
         setUpdatedTimestamp(value.shortTimestamp)
         setArticleTitle(value.title)
-        setVideoPlayButton(articleType: value.typeName)
+        setVideoPlayButton(leadMedia: value.leadMedia);
     }
     
     private func setImage(withUrl url:String) {
@@ -46,9 +46,15 @@ class LeadImageTableViewCell: UITableViewCell {
         articleTitle.text = title;
     }
     
-    private func setVideoPlayButton(articleType:String) {
-        if(articleType == Constants.ArticleTypes.VIDEO) {
-            videoPlayButton.isHidden = false
+    private func setVideoPlayButton(leadMedia:LeadMedia?) {
+        guard let unwrappedLeadMedia = leadMedia else {
+            videoPlayButton.isHidden = true;
+            return
         }
+        if(unwrappedLeadMedia.typeName != Constants.ArticleTypes.VIDEO_RELEASE) {
+            videoPlayButton.isHidden = true;
+            return;
+        }
+        videoPlayButton.isHidden = false;
     }
 }
