@@ -13,19 +13,12 @@ class PhotocentricViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  
     }
-
 
 }
 
 extension PhotocentricViewController : UITableViewDelegate,UITableViewDataSource{
-    
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        400.0
-    }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,7 +32,8 @@ extension PhotocentricViewController : UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell" , for:    indexPath) as! photocentricTableviewCell
-                       return cell
+        cell.tableviewCellHeight.constant = view.frame.height/1.6
+        return cell
         
     }
     

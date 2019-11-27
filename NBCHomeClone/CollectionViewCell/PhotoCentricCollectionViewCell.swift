@@ -12,7 +12,9 @@ class PhotoCentricCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photocentricArticleTitle: UILabel!
     @IBOutlet weak var photocentricUpdateStatus: UILabel!
+    @IBOutlet weak var photocentricheadimageHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var photocentricTitleHeight: NSLayoutConstraint!
     @IBOutlet weak var cellWidth: NSLayoutConstraint!
     @IBOutlet weak var photoCentricCellTitlename: UILabel!
     @IBOutlet weak var PhotocentricHeadImage: UIImageView!

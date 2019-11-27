@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i1h-JC-Shh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -201,6 +201,9 @@
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dEO-40-ewt">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="473"/>
                                                     <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="473" id="s7A-H0-IcA"/>
+                                                    </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Bg-QF-eOz">
                                                         <size key="itemSize" width="178" height="222"/>
                                                         <size key="estimatedItemSize" width="178" height="222"/>
@@ -216,10 +219,11 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="178" height="222"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="178" translatesAutoresizingMaskIntoConstraints="NO" id="e52-bJ-A7G">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="178" translatesAutoresizingMaskIntoConstraints="NO" id="e52-bJ-A7G">
                                                                         <rect key="frame" x="0.0" y="201.5" width="178" height="20.5"/>
                                                                         <color key="backgroundColor" red="0.30991026760000001" green="0.69234549999999995" blue="0.95254486800000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
+                                                                            <constraint firstAttribute="height" constant="20.5" id="T52-fN-hEP"/>
                                                                             <constraint firstAttribute="width" id="wV2-1d-CKC"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -234,8 +238,11 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUN-9A-Aia">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="178" height="175"/>
+                                                                        <rect key="frame" x="0.0" y="3" width="178" height="172"/>
                                                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="172" id="wYh-aH-RKc"/>
+                                                                        </constraints>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YO4-6O-efg">
                                                                         <rect key="frame" x="0.0" y="149" width="62.5" height="26"/>
@@ -245,17 +252,19 @@
                                                                 <constraints>
                                                                     <constraint firstItem="YO4-6O-efg" firstAttribute="height" secondItem="wUN-9A-Aia" secondAttribute="height" multiplier="0.15" id="05L-kw-tCN"/>
                                                                     <constraint firstItem="YO4-6O-efg" firstAttribute="leading" secondItem="Koh-S5-Zgx" secondAttribute="leading" id="4E2-tb-ra0"/>
-                                                                    <constraint firstItem="wUN-9A-Aia" firstAttribute="top" secondItem="Koh-S5-Zgx" secondAttribute="top" id="BOB-w1-4re"/>
+                                                                    <constraint firstItem="wUN-9A-Aia" firstAttribute="top" secondItem="Koh-S5-Zgx" secondAttribute="top" constant="3" id="BOB-w1-4re"/>
                                                                     <constraint firstItem="zgn-kI-Bka" firstAttribute="width" secondItem="e52-bJ-A7G" secondAttribute="width" id="Jay-v4-rM9"/>
                                                                     <constraint firstAttribute="trailing" secondItem="wUN-9A-Aia" secondAttribute="trailing" id="MWr-aT-kS6"/>
                                                                     <constraint firstItem="wUN-9A-Aia" firstAttribute="leading" secondItem="Koh-S5-Zgx" secondAttribute="leading" id="QKB-Jc-Ha1"/>
-                                                                    <constraint firstItem="zgn-kI-Bka" firstAttribute="top" secondItem="wUN-9A-Aia" secondAttribute="bottom" constant="3" id="Uhn-8k-OhV"/>
+                                                                    <constraint firstItem="zgn-kI-Bka" firstAttribute="top" secondItem="wUN-9A-Aia" secondAttribute="bottom" constant="3" id="Vux-W6-fiH"/>
                                                                     <constraint firstItem="YO4-6O-efg" firstAttribute="width" secondItem="wUN-9A-Aia" secondAttribute="width" multiplier="0.35" id="Y6w-aZ-QjP"/>
                                                                     <constraint firstItem="YO4-6O-efg" firstAttribute="bottom" secondItem="wUN-9A-Aia" secondAttribute="bottom" id="cy5-w6-uZO"/>
                                                                     <constraint firstAttribute="trailing" secondItem="e52-bJ-A7G" secondAttribute="trailing" id="eIX-b2-CmX"/>
                                                                     <constraint firstItem="e52-bJ-A7G" firstAttribute="top" secondItem="zgn-kI-Bka" secondAttribute="bottom" constant="3" id="fMz-4x-tey"/>
                                                                     <constraint firstItem="e52-bJ-A7G" firstAttribute="leading" secondItem="Koh-S5-Zgx" secondAttribute="leading" id="gQK-hY-ttX"/>
                                                                     <constraint firstAttribute="bottom" secondItem="e52-bJ-A7G" secondAttribute="bottom" id="lJt-5j-xec"/>
+                                                                    <constraint firstItem="e52-bJ-A7G" firstAttribute="leading" secondItem="Koh-S5-Zgx" secondAttribute="leading" id="okR-ZB-8o1"/>
+                                                                    <constraint firstItem="zgn-kI-Bka" firstAttribute="centerX" secondItem="wUN-9A-Aia" secondAttribute="centerX" id="sKl-Dm-g4U"/>
                                                                     <constraint firstItem="zgn-kI-Bka" firstAttribute="centerX" secondItem="e52-bJ-A7G" secondAttribute="centerX" id="xdG-3r-D1Z"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
@@ -267,7 +276,9 @@
                                                                 <outlet property="photoCentricCellTitlename" destination="e52-bJ-A7G" id="miH-ZN-kT1"/>
                                                                 <outlet property="photocentricArticleTitle" destination="e52-bJ-A7G" id="Qjr-nF-Zsk"/>
                                                                 <outlet property="photocentricArticletype" destination="YO4-6O-efg" id="42U-7R-YhA"/>
+                                                                <outlet property="photocentricTitleHeight" destination="T52-fN-hEP" id="Kli-Pd-qg5"/>
                                                                 <outlet property="photocentricUpdateStatus" destination="zgn-kI-Bka" id="DdZ-EY-z9R"/>
+                                                                <outlet property="photocentricheadimageHeight" destination="wYh-aH-RKc" id="4bp-rq-6fK"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -278,14 +289,17 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="dEO-40-ewt" firstAttribute="width" secondItem="e6A-Fg-52L" secondAttribute="width" id="BwV-Wq-h4h"/>
                                                 <constraint firstAttribute="bottom" secondItem="dEO-40-ewt" secondAttribute="bottom" id="Sav-Md-h1f"/>
                                                 <constraint firstItem="dEO-40-ewt" firstAttribute="leading" secondItem="e6A-Fg-52L" secondAttribute="leading" id="TKL-et-hot"/>
                                                 <constraint firstAttribute="trailing" secondItem="dEO-40-ewt" secondAttribute="trailing" id="eRT-Wa-MEy"/>
                                                 <constraint firstItem="dEO-40-ewt" firstAttribute="top" secondItem="e6A-Fg-52L" secondAttribute="top" id="hXg-hC-FbT"/>
+                                                <constraint firstItem="dEO-40-ewt" firstAttribute="height" secondItem="e6A-Fg-52L" secondAttribute="height" id="weK-9y-tLC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="photocentricCollectioview" destination="dEO-40-ewt" id="6cr-GO-ZPz"/>
+                                            <outlet property="tableviewCellHeight" destination="s7A-H0-IcA" id="RIG-3W-m6C"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
