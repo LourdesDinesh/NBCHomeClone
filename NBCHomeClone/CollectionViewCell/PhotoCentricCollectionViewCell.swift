@@ -21,7 +21,16 @@ class PhotoCentricCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photocentricArticletype: UIImageView!
     
+    var photoCentricHeight : CGFloat = 0.0 {
+        didSet {
+            updateCellHeight()
+        }
+    }
     
+    
+    func updateCellHeight() {
+        photocentricTitleHeight.constant = photoCentricHeight;
+    }
     public func setValue(value:Items) {
           setArticleTitle(title: value.title)
           setHeadlineImage(imageUrl: value.thumbnailImageURL)

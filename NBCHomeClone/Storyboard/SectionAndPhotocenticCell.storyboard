@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i1h-JC-Shh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -201,19 +201,10 @@
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dEO-40-ewt">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="473"/>
                                                     <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="473" id="s7A-H0-IcA"/>
-                                                    </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Bg-QF-eOz">
-                                                        <size key="itemSize" width="178" height="222"/>
-                                                        <size key="estimatedItemSize" width="178" height="222"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                    </collectionViewFlowLayout>
+                                                    <collectionViewLayout key="collectionViewLayout" id="Oac-Mt-ICg" customClass="photocentricLayout" customModule="NBCHomeClone" customModuleProvider="target"/>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCentric" id="My7-ff-XGg" customClass="PhotoCentricCollectionViewCell" customModule="NBCHomeClone" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="10" width="178" height="222"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="178" height="222"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Koh-S5-Zgx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="178" height="222"/>
@@ -289,17 +280,14 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="dEO-40-ewt" firstAttribute="width" secondItem="e6A-Fg-52L" secondAttribute="width" id="BwV-Wq-h4h"/>
                                                 <constraint firstAttribute="bottom" secondItem="dEO-40-ewt" secondAttribute="bottom" id="Sav-Md-h1f"/>
                                                 <constraint firstItem="dEO-40-ewt" firstAttribute="leading" secondItem="e6A-Fg-52L" secondAttribute="leading" id="TKL-et-hot"/>
                                                 <constraint firstAttribute="trailing" secondItem="dEO-40-ewt" secondAttribute="trailing" id="eRT-Wa-MEy"/>
                                                 <constraint firstItem="dEO-40-ewt" firstAttribute="top" secondItem="e6A-Fg-52L" secondAttribute="top" id="hXg-hC-FbT"/>
-                                                <constraint firstItem="dEO-40-ewt" firstAttribute="height" secondItem="e6A-Fg-52L" secondAttribute="height" id="weK-9y-tLC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="photocentricCollectioview" destination="dEO-40-ewt" id="6cr-GO-ZPz"/>
-                                            <outlet property="tableviewCellHeight" destination="s7A-H0-IcA" id="RIG-3W-m6C"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
