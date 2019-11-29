@@ -8,28 +8,28 @@
 
 import Foundation
 struct HomeDataModel:Codable {
-    var modules:[Modules]!;
+    var modules:[Modules]?;
 }
 
 struct Modules:Codable {
-    var template:String!;
-    var pageTitle:String!;
-    var typeName:String!;
-    var listSize:Int!;
-    var type:String!;
-    var location:String!;
+    var template:String?;
+    var pageTitle:String?;
+    var typeName:String?;
+    var listSize:Int?;
+    var type:String?;
+    var location:String?;
     var items:[Items];
 }
 
 struct Items:Codable {
-    var typeName:String!;
-    var title:String!;
-    var thumbnailImageURL:String!;
-    var shortTimestamp:String!;
-    var sponsored:Bool!;
+    var typeName:String?;
+    var title:String?;
+    var thumbnailImageURL:String?;
+    var shortTimestamp:String?;
+    var sponsored:Bool?;
     var leadMedia:LeadMedia?;
 }
 
 struct LeadMedia:Codable {
-    var typeName: String!;
+    var typeName: String?;
 }

@@ -45,66 +45,90 @@ class HomeScreenViewController: UIViewController {
 //ListCell Population
 extension HomeScreenViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        let numberOfSections = homeDataModel?.modules.count ?? 0
+        let numberOfSections = homeDataModel?.modules?.count ?? 0
         return numberOfSections
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRows = homeDataModel?.modules[section].items.count ?? 0
+        let numberOfRows = homeDataModel?.modules?[section].items.count ?? 0
         return numberOfRows
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(indexPath.section)
         //LeadCell
         if(indexPath.row == 0) {
             let cell = newsTableView.dequeueReusableCell(withIdentifier: LeadImageTableViewCell.REUSABLE_IDENTIFIER) as! LeadImageTableViewCell;
-            cell.setValue(value: (homeDataModel?.modules[indexPath.section].items[indexPath.row])!)
+            cell.setValue(value: (homeDataModel?.modules?[indexPath.section].items[indexPath.row])!)
             return cell;
         }
         if(indexPath.section < 3) {
             let cell = newsTableView.dequeueReusableCell(withIdentifier: ListTableViewCell.REUSABLE_IDENTIFIER) as! ListTableViewCell
-            cell.setValue(value: (homeDataModel?.modules[indexPath.section].items[indexPath.row])!)
+            cell.setValue(value: (homeDataModel?.modules?[indexPath.section].items[indexPath.row])!)
             return cell;
         } else {
-            let cell = newsTableView.dequeueReusableCell(withIdentifier: HeadlineCentricTableViewCell.REUSABLE_IDENTITY) as! HeadlineCentricTableViewCell
-            cell.setValue(value: (homeDataModel?.modules[indexPath.section].items[indexPath.row])!)
-            return cell;
+            switch homeDataModel?.modules?[indexPath.section].template {
+            case Constants.Templates.PHOTO_CENTRIC.rawValue:
+                //MARK:- This has to be changed once Photocentric is ready
+                let cell = newsTableView.dequeueReusableCell(withIdentifier: HeadlineCentricTableViewCell.REUSABLE_IDENTITY) as! HeadlineCentricTableViewCell
+                cell.setValue(value: (homeDataModel?.modules?[indexPath.section].items[indexPath.row])!)
+                return cell;
+            case Constants.Templates.HEADLINE_CENTRIC.rawValue:
+                let cell = newsTableView.dequeueReusableCell(withIdentifier: HeadlineCentricTableViewCell.REUSABLE_IDENTITY) as! HeadlineCentricTableViewCell
+                cell.setValue(value: (homeDataModel?.modules?[indexPath.section].items[indexPath.row])!)
+                return cell;
+            default:
+                print("Unexpected Type. This  has to be loaded in WebView")
+                return UITableViewCell()
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if(indexPath.row == 0) {
             return 200
-        } else {
+        } else if(indexPath.section < 3) {
             return 111
+        } else {
+            let cellTemplate:String = homeDataModel?.modules?[indexPath.section].template ?? "";
+            switch cellTemplate {
+            case Constants.Templates.HEADLINE_CENTRIC.rawValue:
+                return 50
+            case Constants.Templates.PHOTO_CENTRIC.rawValue:
+                //MARK:- Have to change this value
+                return 111
+            default:
+                return 0
+            }
         }
     }
 }
 
 extension HomeScreenViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if(homeDataModel?.modules?[section].items.count == 0) {
+                   return nil
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: SectionNameTableViewCell.REUSABLE_IDENTIFIER) as! SectionNameTableViewCell
-        cell.setValue(title: (homeDataModel?.modules[section].pageTitle) ?? "")
+        cell.setValue(title: (homeDataModel?.modules?[section].pageTitle) ?? "")
         return cell;
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if(homeDataModel?.modules[section].items.count == 0) {
+        if(homeDataModel?.modules?[section].items.count == 0) {
                    return 0
         }
         return 33
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if(homeDataModel?.modules[section].items.count == 0) {
+        if(homeDataModel?.modules?[section].items.count == 0) {
                    return 0
         }
-        return 53
+        return 25
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if(homeDataModel?.modules[section].items.count == 0) {
+        if(homeDataModel?.modules?[section].items.count == 0) {
                    return nil
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: SeeMoreTableViewCell.REUSABLE_IDENTIFIER);

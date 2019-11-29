@@ -24,9 +24,9 @@ class HeadlineCentricTableViewCell: UITableViewCell {
     }
 
     public func setValue(value: Items) {
-        setHeadline(withTitle: value.title)
+        setHeadline(withTitle: value.title ?? "")
         setArticleType(value.typeName)
-        setUpdatedTime(value.shortTimestamp)
+        setUpdatedTime(value.shortTimestamp ?? "")
     }
     
     private func setHeadline(withTitle title:String) {

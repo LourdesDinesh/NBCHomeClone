@@ -28,9 +28,9 @@ class LeadImageTableViewCell: UITableViewCell {
     }
     
     public func setValue(value:Items) {
-        setImage(withUrl: value.thumbnailImageURL)
-        setUpdatedTimestamp(value.shortTimestamp)
-        setArticleTitle(value.title)
+        setImage(withUrl: value.thumbnailImageURL ?? "")
+        setUpdatedTimestamp(value.shortTimestamp ?? "")
+        setArticleTitle(value.title ?? "")
         setVideoPlayButton(leadMedia: value.leadMedia);
     }
     

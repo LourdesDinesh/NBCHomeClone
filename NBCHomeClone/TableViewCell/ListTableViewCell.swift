@@ -26,9 +26,9 @@ class ListTableViewCell: UITableViewCell {
     }
     
     public func setValue(value:Items) {
-        setArticleTitle(title: value.title)
-        setHeadlineImage(imageUrl: value.thumbnailImageURL)
-        setUpdatedTime(value.shortTimestamp)
+        setArticleTitle(title: value.title ?? "")
+        setHeadlineImage(imageUrl: value.thumbnailImageURL ?? "")
+        setUpdatedTime(value.shortTimestamp ?? "")
     }
     
     private func setUpdatedTime(_ time:String) {
