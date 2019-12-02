@@ -50,13 +50,13 @@ extension HomeScreenViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let toReturn = homeDataModel?.modules[0].items.count ?? 0
+        let toReturn = homeDataModel?.modules?[0].items.count ?? 0
         return toReturn
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = newsTableView.dequeueReusableCell(withIdentifier: "listViewNewsCell") as! ListTableViewCell
-        cell.setValue(value: (homeDataModel?.modules[0].items[indexPath.row])!)
+        cell.setValue(value: (homeDataModel?.modules?[0].items[indexPath.row])!)
         return cell;
     }
 }

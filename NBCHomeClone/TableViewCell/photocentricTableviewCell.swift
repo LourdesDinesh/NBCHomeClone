@@ -21,7 +21,6 @@ class photocentricTableviewCell: UITableViewCell {
       //  findnoLine(data: data!)
       //  self.photocentricCollectioview.delegate = self
         self.photocentricCollectioview.dataSource = self
-        
         self.photocentricCollectioview.reloadData()
     }
     
@@ -39,6 +38,7 @@ class photocentricTableviewCell: UITableViewCell {
 extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     //
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let collectionviewCellWidth : CGFloat  = (self.frame.size.width/2) - 20
 //        if let data1 = data?[indexPath.row] as String?{
 //            let maxSize = CGSize(width: frame.size.width, height: CGFloat(MAXFLOAT))
