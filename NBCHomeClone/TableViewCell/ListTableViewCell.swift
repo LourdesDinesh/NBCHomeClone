@@ -30,7 +30,7 @@ class ListTableViewCell: UITableViewCell {
         setArticleTitle(title: value.title ?? "")
         setHeadlineImage(imageUrl: value.thumbnailImageURL ?? "")
         setUpdatedTime(value.shortTimestamp ?? "")
-        setVideoStatus(typeName: value.typeName ?? "")
+        setVideoStatus(typeName: value.leadMedia?.typeName ?? "")
     }
     
     private func setUpdatedTime(_ time:String) {
