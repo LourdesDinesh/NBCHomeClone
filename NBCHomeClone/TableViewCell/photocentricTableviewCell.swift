@@ -13,13 +13,8 @@ class photocentricTableviewCell: UITableViewCell {
     private var homeDataModel:HomeDataModel?
     var cellHeightConstant : CGFloat = 0.0
     var maxLine : Int = 0
-   // var dumlabel : UILabel
-//    var data : [String]? = ["title oe...title of the article was shown here...","title of the article was shown here...","title of the artf the article was shown here...title of the article was shown here...title of the article was shown hercle was shown here...","title of the article was shown here..."]
-//    var lineData : [Int] = [0]
     override func awakeFromNib() {
         super.awakeFromNib()
-      //  findnoLine(data: data!)
-      //  self.photocentricCollectioview.delegate = self
         self.photocentricCollectioview.dataSource = self
         self.photocentricCollectioview.reloadData()
     }
@@ -40,13 +35,6 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let collectionviewCellWidth : CGFloat  = (self.frame.size.width/2) - 20
-//        if let data1 = data?[indexPath.row] as String?{
-//            let maxSize = CGSize(width: frame.size.width, height: CGFloat(MAXFLOAT))
-//              //  let text = (self.text ?? "") as NSString
-//            let textHeight = data1.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [.font: UIFont.systemFont(ofSize: 15.0)], context: nil)
-//            return CGSize(width: collectionviewCellWidth, height: textHeight.height+250)
-//        }
-        
         let collectionviewCellHeight : CGFloat  = (self.frame.height/2)
         return CGSize(width: collectionviewCellWidth, height: collectionviewCellHeight)
     }
@@ -56,9 +44,6 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return  10
     }
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    //        return  2
-    //    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
@@ -81,10 +66,8 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for:    indexPath) as! PhotoCentricCollectionViewCell
-           //cell.photoCentricCellTitlename.text = data?[indexPath.row]
             cell.photoCentricCellTitlename.text = "sdssdd ."
             cell.cellWidth.constant = cell.frame.size.width
-            // cell.photoCentricCellTitlename.preferredMaxLayoutWidth = cell.frame.size.width
             cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
             cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
             let lines = cell.photoCentricCellTitlename.maxNumberOfLines
@@ -94,10 +77,8 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
             return cell;
         }else if indexPath.row == 1{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for:    indexPath) as! PhotoCentricCollectionViewCell
-           //cell.photoCentricCellTitlename.text = data?[indexPath.row]
             cell.photoCentricCellTitlename.text = "titfgsddgfgdfgdfgdfgdgdghgjhjghjjgfjfhjfjfjfgjfgdffddgdgghe ."
             cell.cellWidth.constant = cell.frame.size.width
-            // cell.photoCentricCellTitlename.preferredMaxLayoutWidth = cell.frame.size.width
             cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
             cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
             let lines = cell.photoCentricCellTitlename.maxNumberOfLines
@@ -109,10 +90,8 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
         else {
     
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for:    indexPath) as! PhotoCentricCollectionViewCell
-       // cell.photoCentricCellTitlename.text = data?[indexPath.row]
           cell.photoCentricCellTitlename.text = "titlfindfgfgfdsfgdd"
             cell.cellWidth.constant = cell.frame.size.width
-             //  cell.photoCentricCellTitlename.preferredMaxLayoutWidth = cell.frame.size.width
             cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
             cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
             let lines = cell.photoCentricCellTitlename.maxNumberOfLines
