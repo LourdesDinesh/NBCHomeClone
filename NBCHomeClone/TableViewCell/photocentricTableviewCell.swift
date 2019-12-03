@@ -75,8 +75,8 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
             cell.cellWidth.constant = cell.frame.size.width
             cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
             cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
-            let lines = cell.photoCentricCellTitlename.maxNumberOfLines
-            maxLine = checkMaxLine(count: lines)
+          //  let lines = cell.photoCentricCellTitlename.maxNumberOfLines
+          //  maxLine = checkMaxLine(count: lines)
             cell.photocentricTitleHeight.constant = cellHeightConstant * CGFloat(maxLine)
 
             return cell;
@@ -86,8 +86,8 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
             cell.cellWidth.constant = cell.frame.size.width
             cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
             cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
-            let lines = cell.photoCentricCellTitlename.maxNumberOfLines
-            maxLine = checkMaxLine(count: lines)
+           // let lines = cell.photoCentricCellTitlename.maxNumberOfLines
+        //    maxLine = checkMaxLine(count: lines)
             cell.photocentricTitleHeight.constant = cellHeightConstant * CGFloat(maxLine)
      
             return cell;
@@ -99,8 +99,8 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
             cell.cellWidth.constant = cell.frame.size.width
             cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
             cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
-            let lines = cell.photoCentricCellTitlename.maxNumberOfLines
-            maxLine = checkMaxLine(count: lines)
+         //   let lines = cell.photoCentricCellTitlename.maxNumberOfLines
+          //  maxLine = checkMaxLine(count: lines)
           cell.photocentricTitleHeight.constant = cellHeightConstant * CGFloat(maxLine)
             
             return cell;
