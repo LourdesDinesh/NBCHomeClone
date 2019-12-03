@@ -69,8 +69,8 @@ extension HomeScreenViewController: UITableViewDataSource {
             switch homeDataModel?.modules?[indexPath.section].template {
             case Constants.Templates.PHOTO_CENTRIC.rawValue:
                 //MARK:- This has to be changed once Photocentric is ready
-                let cell = newsTableView.dequeueReusableCell(withIdentifier: HeadlineCentricTableViewCell.REUSABLE_IDENTITY) as! HeadlineCentricTableViewCell
-                cell.setValue(value: (homeDataModel?.modules?[indexPath.section].items[indexPath.row])!)
+                let cell = newsTableView.dequeueReusableCell(withIdentifier: photocentricTableviewCell.REUSABLE_IDENTIFIER) as! photocentricTableviewCell
+                cell.setValue(value: ((homeDataModel?.modules?[indexPath.section].items)!))
                 return cell;
             case Constants.Templates.HEADLINE_CENTRIC.rawValue:
                 let cell = newsTableView.dequeueReusableCell(withIdentifier: HeadlineCentricTableViewCell.REUSABLE_IDENTITY) as! HeadlineCentricTableViewCell
@@ -95,7 +95,10 @@ extension HomeScreenViewController: UITableViewDataSource {
                 return 50
             case Constants.Templates.PHOTO_CENTRIC.rawValue:
                 //MARK:- Have to change this value
-                return 111
+                if(indexPath.row > 1) {
+                    return 0
+                }
+                return 500
             default:
                 return 0
             }
