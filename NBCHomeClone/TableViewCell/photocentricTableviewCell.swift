@@ -8,14 +8,19 @@
 
 import UIKit
 
+
 class photocentricTableviewCell: UITableViewCell {
     @IBOutlet weak var photocentricCollectioview: UICollectionView!
+    
     private var homeDataModel:HomeDataModel?
     var cellHeightConstant : CGFloat = 0.0
     var maxLine : Int = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.photocentricCollectioview.dataSource = self
+        let layout = photocentricCollectioview.collectionViewLayout as? photocentricLayout
+        layout?.delegate = self
         self.photocentricCollectioview.reloadData()
     }
     
@@ -119,3 +124,8 @@ extension UILabel {
      }
  }
 
+extension photocentricTableviewCell : photocentricLayoutDelegate{
+func collectionview(collectionview: UICollectionView, heightAtindexpath indexPath: NSIndexPath) -> CGFloat {
+    return collectionview.frame.height/2
+}
+}

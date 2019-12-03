@@ -71,9 +71,6 @@ extension PhotocentricViewController : UITableViewDelegate,UITableViewDataSource
     }
 }
 
-extension photocentricTableviewCell : photocentricLayoutDelegate{
-    func collectionview(collectionview: UICollectionView, heightAtindexpath indexPath: NSIndexPath) -> CGFloat {
-        return 100
-    }
 
-}
+
+
