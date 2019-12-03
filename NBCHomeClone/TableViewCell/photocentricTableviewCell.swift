@@ -77,7 +77,7 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
             return cell;
         }else if indexPath.row == 1{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for:    indexPath) as! PhotoCentricCollectionViewCell
-            cell.photoCentricCellTitlename.text = "titfgsddgfgdfgdfgdfgdgdghgjhjghjjgfjfhjfjfjfgjfgdffddgdgghe ."
+            cell.photoCentricCellTitlename.text = "titfgsddgfgdfgdfgdfgdgdghgjhjg ."
             cell.cellWidth.constant = cell.frame.size.width
             cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
             cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height

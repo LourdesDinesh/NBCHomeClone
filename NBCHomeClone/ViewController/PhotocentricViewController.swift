@@ -12,7 +12,7 @@ class PhotocentricViewController: UIViewController {
     @IBOutlet weak var sampletableview: UITableView!
     var dumlabel : UILabel = UILabel()
     var maxNumberOfLines:Int!
-        var data : [String] = ["sdssdd","titfgsddgfgdfgdfgdfgdgdghgjhjghjjgfjfhjfjfjfgjfgdffddgdgghe","titlfindfgfgfdsfgdd","titlfindfgfgfdsfgdd"]
+        var data : [String] = ["sdssdd","titfgsddgfgdfgdfgdfgdgdghgjhjg","titlfindfgfgfdsfgdd","titlfindfgfgfdsfgdd"]
         var lineData : [Int] = [0]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +66,7 @@ extension PhotocentricViewController : UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell" , for:    indexPath) as! photocentricTableviewCell
   //  cell.tableviewCellHeight.constant = view.frame.height/1.7
+        cell.maxLine = maxNumberOfLines;
         return cell
     }
 }
