@@ -7,24 +7,29 @@
 //
 
 import Foundation
-struct HomeDataModel:Decodable {
-    var modules:[Modules]!;
+struct HomeDataModel:Codable {
+    var modules:[Modules]?;
 }
 
-struct Modules:Decodable {
-    var template:String!;
-    var pageTitle:String!;
-    var typeName:String!;
-    var listSize:Int!;
-    var type:String!;
-    var location:String!;
+struct Modules:Codable {
+    var template:String?;
+    var pageTitle:String?;
+    var typeName:String?;
+    var listSize:Int?;
+    var type:String?;
+    var location:String?;
     var items:[Items];
 }
 
-struct Items:Decodable {
-    var typeName:String!;
-    var title:String!;
-    var thumbnailImageURL:String!;
-    var shortTimestamp:String!;
-    var sponsored:Bool;
+struct Items:Codable {
+    var typeName:String?;
+    var title:String?;
+    var thumbnailImageURL:String?;
+    var shortTimestamp:String?;
+    var sponsored:Bool?;
+    var leadMedia:LeadMedia?;
+}
+
+struct LeadMedia:Codable {
+    var typeName: String?;
 }

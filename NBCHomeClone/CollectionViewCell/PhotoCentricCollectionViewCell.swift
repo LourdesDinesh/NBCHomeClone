@@ -32,7 +32,8 @@ class PhotoCentricCollectionViewCell: UICollectionViewCell {
         photocentricTitleHeight.constant = photoCentricHeight;
     }
     public func setValue(value:Items) {
-        setArticleTitle(title: value.title ?? "")
+          setArticleTitle(title: value.title ?? "")
+
           setHeadlineImage(imageUrl: value.thumbnailImageURL ?? "")
           setUpdatedTime(value.shortTimestamp ?? "")
       }

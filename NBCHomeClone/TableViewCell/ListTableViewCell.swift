@@ -13,6 +13,7 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var thumaNailImageView: UIImageView!
     @IBOutlet weak var updatedTime: UILabel!
     @IBOutlet weak var articleHeadline: UILabel!
+    @IBOutlet weak var videoLabel: UIView!
     
     static let REUSABLE_IDENTIFIER:String = "listViewNewsCell";
     override func awakeFromNib() {
@@ -26,9 +27,10 @@ class ListTableViewCell: UITableViewCell {
     }
     
     public func setValue(value:Items) {
-        setArticleTitle(title: value.title)
-        setHeadlineImage(imageUrl: value.thumbnailImageURL)
-        setUpdatedTime(value.shortTimestamp)
+        setArticleTitle(title: value.title ?? "")
+        setHeadlineImage(imageUrl: value.thumbnailImageURL ?? "")
+        setUpdatedTime(value.shortTimestamp ?? "")
+        setVideoStatus(typeName: value.leadMedia?.typeName ?? "")
     }
     
     private func setUpdatedTime(_ time:String) {
@@ -41,6 +43,14 @@ class ListTableViewCell: UITableViewCell {
     
     private func setHeadlineImage(imageUrl:String) {
         thumaNailImageView.loadImageFromURLString(imageUrl);
+    }
+    
+    private func setVideoStatus(typeName:String) {
+        if(typeName ==  Constants.ArticleTypes.VIDEO_RELEASE) {
+            videoLabel.isHidden = false
+        } else {
+            videoLabel.isHidden = true
+        }
     }
 
 }
