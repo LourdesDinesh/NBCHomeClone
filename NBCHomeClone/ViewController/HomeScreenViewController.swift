@@ -50,6 +50,10 @@ extension HomeScreenViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        print(homeDataModel?.modules?[section].template!)
+        if(homeDataModel?.modules?[section].template == Constants.Templates.PHOTO_CENTRIC.rawValue) {
+            return 2
+        }
         let numberOfRows = homeDataModel?.modules?[section].items.count ?? 0
         return numberOfRows
     }
@@ -71,12 +75,10 @@ extension HomeScreenViewController: UITableViewDataSource {
                 //MARK:- This has to be changed once Photocentric is ready
                 let cell = newsTableView.dequeueReusableCell(withIdentifier: photocentricTableviewCell.REUSABLE_IDENTIFIER) as! photocentricTableviewCell
                 cell.setValue(value: ((homeDataModel?.modules?[indexPath.section].items)!))
-                print("testing 1")
                 return cell;
             case Constants.Templates.HEADLINE_CENTRIC.rawValue:
                 let cell = newsTableView.dequeueReusableCell(withIdentifier: HeadlineCentricTableViewCell.REUSABLE_IDENTITY) as! HeadlineCentricTableViewCell
                 cell.setValue(value: (homeDataModel?.modules?[indexPath.section].items[indexPath.row])!)
-                print("testing 2")
                 return cell;
             default:
                 print("Unexpected Type. This  has to be loaded in WebView")
