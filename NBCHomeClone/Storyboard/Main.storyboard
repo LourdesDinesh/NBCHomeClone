@@ -212,7 +212,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="This is a Headline centric cell and this cell can have a title with maximum of two lines">
                                                             <attributes>
-                                                                <font key="NSFont" metaFont="menu" size="14"/>
+                                                                <font key="NSFont" metaFont="menuBar"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -350,7 +350,7 @@
                                                                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gIp-rx-LQ2">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gIp-rx-LQ2">
                                                                         <rect key="frame" x="0.0" y="3" width="178" height="172"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="172" id="rNh-g3-v2M"/>
