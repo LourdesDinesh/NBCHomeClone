@@ -51,7 +51,7 @@ extension HomeScreenViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        print(homeDataModel?.modules?[section].template!)
-        if(homeDataModel?.modules?[section].template == Constants.Templates.PHOTO_CENTRIC.rawValue) {
+        if(section > 2 && homeDataModel?.modules?[section].template == Constants.Templates.PHOTO_CENTRIC.rawValue) {
             return 2
         }
         let numberOfRows = homeDataModel?.modules?[section].items.count ?? 0
@@ -97,7 +97,7 @@ extension HomeScreenViewController: UITableViewDataSource {
             let cellTemplate:String = homeDataModel?.modules?[indexPath.section].template ?? "";
             switch cellTemplate {
             case Constants.Templates.HEADLINE_CENTRIC.rawValue:
-                return 50
+                return 70
             case Constants.Templates.PHOTO_CENTRIC.rawValue:
                 //MARK:- Have to change this value
 //                if(indexPath.row > 1) {
@@ -132,7 +132,7 @@ extension HomeScreenViewController:UITableViewDelegate {
         if(homeDataModel?.modules?[section].items.count == 0) {
                    return 0
         }
-        return 25
+        return 35
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

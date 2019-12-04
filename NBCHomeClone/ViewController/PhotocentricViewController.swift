@@ -19,7 +19,6 @@ class PhotocentricViewController: UIViewController {
         setupDummyLabel()
         lineData = findnoLine(datainfo: data)
         maxNumberOfLines = maxNumber(inArray: lineData)
-        print(lineData)
 //        var layout = photocentricLayout.self as UICollectionViewLayout
     }
     
