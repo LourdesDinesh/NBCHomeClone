@@ -71,16 +71,19 @@ extension HomeScreenViewController: UITableViewDataSource {
                 //MARK:- This has to be changed once Photocentric is ready
                 let cell = newsTableView.dequeueReusableCell(withIdentifier: photocentricTableviewCell.REUSABLE_IDENTIFIER) as! photocentricTableviewCell
                 cell.setValue(value: ((homeDataModel?.modules?[indexPath.section].items)!))
+                print("testing 1")
                 return cell;
             case Constants.Templates.HEADLINE_CENTRIC.rawValue:
                 let cell = newsTableView.dequeueReusableCell(withIdentifier: HeadlineCentricTableViewCell.REUSABLE_IDENTITY) as! HeadlineCentricTableViewCell
                 cell.setValue(value: (homeDataModel?.modules?[indexPath.section].items[indexPath.row])!)
+                print("testing 2")
                 return cell;
             default:
                 print("Unexpected Type. This  has to be loaded in WebView")
                 return UITableViewCell()
             }
         }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -95,9 +98,9 @@ extension HomeScreenViewController: UITableViewDataSource {
                 return 50
             case Constants.Templates.PHOTO_CENTRIC.rawValue:
                 //MARK:- Have to change this value
-                if(indexPath.row > 1) {
-                    return 0
-                }
+//                if(indexPath.row > 1) {
+//                    return 0
+//                }
                 return 500
             default:
                 return 0
