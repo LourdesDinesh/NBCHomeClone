@@ -12,12 +12,13 @@ class PhotocentricViewController: UIViewController {
     @IBOutlet weak var sampletableview: UITableView!
     var dumlabel : UILabel = UILabel()
     var maxNumberOfLines:Int!
-        var data : [String] = ["sdsfsdd","titfjg","jhfghfghfghfhfhfhdhdfhdhdhdddhdfhfh","titlfindfgfgfdsfgdd"]
+    static var data : [String] = ["sdsfsdd","tidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsfstidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsfsfstfjgfstfjg","tidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsfstidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsfsfstfjgfstfjg","titlfindfgfgfdsfgdd"]
+     static var status : [String] = ["","dgdsfg","",""]
         var lineData : [Int] = [0]
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDummyLabel()
-        lineData = findnoLine(datainfo: data)
+        lineData = findnoLine(datainfo: PhotocentricViewController.data)
         maxNumberOfLines = maxNumber(inArray: lineData)
         print(lineData)
 //        var layout = photocentricLayout.self as UICollectionViewLayout
@@ -30,7 +31,7 @@ class PhotocentricViewController: UIViewController {
         func findnoLine(datainfo : [String]) -> [Int]
         {
             var lineData1 = [Int]()
-            let data1 = data
+            let data1 = PhotocentricViewController.data
             for string1 in data1 {
                 dumlabel.text = string1
                 let count = dumlabel.maxNumberOfLines

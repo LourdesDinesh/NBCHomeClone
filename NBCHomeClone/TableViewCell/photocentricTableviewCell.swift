@@ -15,12 +15,13 @@ class photocentricTableviewCell: UITableViewCell {
     private var homeDataModel:HomeDataModel?
     var cellHeightConstant : CGFloat = 0.0
     var maxLine : Int = 0
-    
+    var isStatusAvailable : Bool!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.photocentricCollectioview.dataSource = self
         let layout = photocentricCollectioview.collectionViewLayout as? photocentricLayout
         layout?.delegate = self
+        isStatusAvailable = checkStatus()
         self.photocentricCollectioview.reloadData()
     }
     
@@ -31,7 +32,15 @@ class photocentricTableviewCell: UITableViewCell {
     }
     @IBOutlet weak var tableviewCellHeight: NSLayoutConstraint!
     
-
+    func checkStatus() -> Bool{
+        for data in PhotocentricViewController.status{
+            if data != "" {
+               return true
+            }
+         }
+        return false
+    }
+   
     
 }
 
@@ -69,43 +78,17 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for:    indexPath) as! PhotoCentricCollectionViewCell
-            cell.photoCentricCellTitlename.text = "sdssdd ."
-            cell.cellWidth.constant = cell.frame.size.width
-            cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
+        cell.photoCentricCellTitlename.text = PhotocentricViewController.data[indexPath.row]
+         //   cell.cellWidth.constant = cell.frame.size.width
+          //  cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
             cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
           //  let lines = cell.photoCentricCellTitlename.maxNumberOfLines
           //  maxLine = checkMaxLine(count: lines)
             cell.photocentricTitleHeight.constant = cellHeightConstant * CGFloat(maxLine)
+        cell.updateHeightStatus.constant = isStatusAvailable == true ? cellHeightConstant : 0.0
+            return cell;
 
-            return cell;
-        }else if indexPath.row == 1{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for:    indexPath) as! PhotoCentricCollectionViewCell
-            cell.photoCentricCellTitlename.text = "titfgsddgfgdfgdfgdfgdgdghgjhjg ."
-            cell.cellWidth.constant = cell.frame.size.width
-            cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
-            cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
-           // let lines = cell.photoCentricCellTitlename.maxNumberOfLines
-        //    maxLine = checkMaxLine(count: lines)
-            cell.photocentricTitleHeight.constant = cellHeightConstant * CGFloat(maxLine)
-     
-            return cell;
-        }
-        else {
-    
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for:    indexPath) as! PhotoCentricCollectionViewCell
-          cell.photoCentricCellTitlename.text = "titlfindfgfgfdsfgdd"
-            cell.cellWidth.constant = cell.frame.size.width
-            cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
-            cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
-         //   let lines = cell.photoCentricCellTitlename.maxNumberOfLines
-          //  maxLine = checkMaxLine(count: lines)
-          cell.photocentricTitleHeight.constant = cellHeightConstant * CGFloat(maxLine)
-            
-            return cell;
-        }
-        
     }
     
 }
@@ -126,6 +109,7 @@ extension UILabel {
 
 extension photocentricTableviewCell : photocentricLayoutDelegate{
 func collectionview(collectionview: UICollectionView, heightAtindexpath indexPath: NSIndexPath) -> CGFloat {
-    return collectionview.frame.height/2
+  return collectionview.frame.height/2
+ //   return 100
 }
 }
