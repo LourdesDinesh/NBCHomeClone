@@ -14,14 +14,19 @@ class photocentricTableviewCell: UITableViewCell {
     private var items:[Items]!
     var cellHeightConstant : CGFloat = 0.0
     var maxLine : Int = 0
+     var isStatusAvailable : Bool!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.photocentricCollectioview.dataSource = self
+        let layout = photocentricCollectioview.collectionViewLayout as? photocentricLayout
+               layout?.delegate = self
+     
         self.photocentricCollectioview.reloadData()
     }
     
     public func setValue(value:[Items]) {
         self.items = value
+        isStatusAvailable = checkStatus()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,7 +36,14 @@ class photocentricTableviewCell: UITableViewCell {
     }
     @IBOutlet weak var tableviewCellHeight: NSLayoutConstraint!
     
-
+    func checkStatus() -> Bool{
+        for data in items{
+            if data.shortTimestamp != "" {
+               return true
+            }
+         }
+        return false
+    }
     
 }
 
@@ -71,8 +83,8 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for: indexPath) as! PhotoCentricCollectionViewCell
             cell.setValue(value: items[indexPath.row + 1])
-            cell.cellWidth.constant = cell.frame.size.width
-            cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
+       //     cell.cellWidth.constant = cell.frame.size.width
+          cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
             cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
             let lines = cell.photoCentricCellTitlename.maxNumberOfLines
             maxLine = checkMaxLine(count: lines)
@@ -96,3 +108,17 @@ extension UILabel {
      }
  }
 
+extension photocentricTableviewCell : photocentricLayoutDelegate{
+func collectionview(collectionview: UICollectionView, heightAtindexpath indexPath: NSIndexPath) -> CGFloat {
+    let cell = collectionview.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for:    indexPath as IndexPath) as! PhotoCentricCollectionViewCell
+    cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
+    print("2222")
+    print(maxLine)
+        cell.photocentricTitleHeight.constant = cellHeightConstant * CGFloat(maxLine)
+    cell.updateHeightStatus.constant = isStatusAvailable == true ? cellHeightConstant : 0.0
+
+
+  return (cell.photocentricTitleHeight.constant + cell.updateHeightStatus.constant+cell.photocentricheadimageHeight.constant)
+
+}
+}

@@ -106,7 +106,7 @@ extension HomeScreenViewController: UITableViewDataSource {
 //                if(indexPath.row > 1) {
 //                    return 0
 //                }
-                return CollectionViewTableViewCellHeight
+            return CollectionViewTableViewCellHeight
             default:
                 return 0
             }
