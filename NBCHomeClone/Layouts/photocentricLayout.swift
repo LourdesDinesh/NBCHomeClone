@@ -35,7 +35,6 @@ class photocentricLayout : UICollectionViewLayout {
             var yOff = [CGFloat](repeating: 0, count: noOfcolums)
             var column = 0
             for item in 0..<collectionView!.numberOfItems(inSection: 0){
-                print(item)
                 let indexPath = NSIndexPath(row: item, section: 0)
                 let height:CGFloat = (collectionView?.bounds.height)!/2 //delegate.collectionview(collectionview: collectionView!, heightAtindexpath: indexPath)
                 let frame = CGRect(x: (xOff[column].truncatingRemainder(dividingBy: 2)==0) ? xOff[column] : xOff[column]+5, y: (yOff[column] != 0 ? yOff[column]+5 : yOff[column]), width: columnWidth, height: height)

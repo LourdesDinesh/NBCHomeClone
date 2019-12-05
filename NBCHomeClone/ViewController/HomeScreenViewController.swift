@@ -9,8 +9,13 @@
 import UIKit
 
 class HomeScreenViewController: UIViewController {
+    
     @IBOutlet weak var newsTableView: UITableView!
     private let HOME_API:String = "https://www.nbcnewyork.com/apps/news-app/home/modules/?apiVersion=18&os=ios#";
+    private let leadCellHeight:CGFloat = 200;
+    private let listCellHeight:CGFloat = 111;
+    private let headLineCentricCellHeight:CGFloat = 70;
+    private let CollectionViewTableViewCellHeight:CGFloat = 500;
     private var homeDataModel:HomeDataModel?
     let dispatchGroup:DispatchGroup = DispatchGroup();
     override func viewDidLoad() {
@@ -50,6 +55,9 @@ extension HomeScreenViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(section > 2 && homeDataModel?.modules?[section].template == Constants.Templates.PHOTO_CENTRIC.rawValue) {
+            return 2
+        }
         let numberOfRows = homeDataModel?.modules?[section].items.count ?? 0
         return numberOfRows
     }
@@ -68,9 +76,8 @@ extension HomeScreenViewController: UITableViewDataSource {
         } else {
             switch homeDataModel?.modules?[indexPath.section].template {
             case Constants.Templates.PHOTO_CENTRIC.rawValue:
-                //MARK:- This has to be changed once Photocentric is ready
-                let cell = newsTableView.dequeueReusableCell(withIdentifier: HeadlineCentricTableViewCell.REUSABLE_IDENTITY) as! HeadlineCentricTableViewCell
-                cell.setValue(value: (homeDataModel?.modules?[indexPath.section].items[indexPath.row])!)
+                let cell = newsTableView.dequeueReusableCell(withIdentifier: photocentricTableviewCell.REUSABLE_IDENTIFIER) as! photocentricTableviewCell
+                cell.setValue(value: ((homeDataModel?.modules?[indexPath.section].items)!))
                 return cell;
             case Constants.Templates.HEADLINE_CENTRIC.rawValue:
                 let cell = newsTableView.dequeueReusableCell(withIdentifier: HeadlineCentricTableViewCell.REUSABLE_IDENTITY) as! HeadlineCentricTableViewCell
@@ -81,21 +88,25 @@ extension HomeScreenViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
         }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if(indexPath.row == 0) {
-            return 200
+            return leadCellHeight
         } else if(indexPath.section < 3) {
-            return 111
+            return listCellHeight
         } else {
             let cellTemplate:String = homeDataModel?.modules?[indexPath.section].template ?? "";
             switch cellTemplate {
             case Constants.Templates.HEADLINE_CENTRIC.rawValue:
-                return 50
+                return headLineCentricCellHeight
             case Constants.Templates.PHOTO_CENTRIC.rawValue:
                 //MARK:- Have to change this value
-                return 111
+//                if(indexPath.row > 1) {
+//                    return 0
+//                }
+                return CollectionViewTableViewCellHeight
             default:
                 return 0
             }
@@ -124,7 +135,7 @@ extension HomeScreenViewController:UITableViewDelegate {
         if(homeDataModel?.modules?[section].items.count == 0) {
                    return 0
         }
-        return 25
+        return 30
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -135,22 +146,3 @@ extension HomeScreenViewController:UITableViewDelegate {
         return cell;
     }
 }
-//extension HomeScreenViewController:UITableViewDelegate,UITableViewDataSource{
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        1
-//    }
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        5
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//    let cell = tableView.dequeueReusableCell(withIdentifier: leadImageSectionIdentifier) as! LeadImageTableViewCell
-//        setGradientBackground(view:cell.gradientLayer)
-//        return cell
-//    }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        150.0
-//    }
-//
-//}
