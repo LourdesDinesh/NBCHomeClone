@@ -272,7 +272,7 @@
                                                                 <outlet property="photocentricArticletype" destination="YO4-6O-efg" id="42U-7R-YhA"/>
                                                                 <outlet property="photocentricTitleHeight" destination="T52-fN-hEP" id="Kli-Pd-qg5"/>
                                                                 <outlet property="photocentricUpdateStatus" destination="zgn-kI-Bka" id="DdZ-EY-z9R"/>
-                                                                <outlet property="photocentricheadimageHeight" destination="wYh-aH-RKc" id="4bp-rq-6fK"/>
+                                                                <outlet property="photocentricheadimageHeight" destination="wYh-aH-RKc" id="2m6-ax-V8Z"/>
                                                                 <outlet property="updateHeightStatus" destination="ktQ-3p-Lz8" id="qnQ-AJ-hZg"/>
                                                             </connections>
                                                         </collectionViewCell>

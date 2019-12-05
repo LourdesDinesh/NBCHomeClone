@@ -82,11 +82,11 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
         cell.photoCentricCellTitlename.text = PhotocentricViewController.data[indexPath.row]
          //   cell.cellWidth.constant = cell.frame.size.width
           //  cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
-            cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
-          //  let lines = cell.photoCentricCellTitlename.maxNumberOfLines
-          //  maxLine = checkMaxLine(count: lines)
+        //  let lines = cell.photoCentricCellTitlename.maxNumberOfLines
+                 //  maxLine = checkMaxLine(count: lines)
+          cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
             cell.photocentricTitleHeight.constant = cellHeightConstant * CGFloat(maxLine)
-        cell.updateHeightStatus.constant = isStatusAvailable == true ? cellHeightConstant : 0.0
+       cell.updateHeightStatus.constant = isStatusAvailable == true ? cellHeightConstant : 0.0
             return cell;
 
     }
@@ -109,7 +109,15 @@ extension UILabel {
 
 extension photocentricTableviewCell : photocentricLayoutDelegate{
 func collectionview(collectionview: UICollectionView, heightAtindexpath indexPath: NSIndexPath) -> CGFloat {
-  return collectionview.frame.height/2
- //   return 100
+    let cell = collectionview.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for:    indexPath as IndexPath) as! PhotoCentricCollectionViewCell
+    cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
+    print("2222")
+    print(maxLine)
+        cell.photocentricTitleHeight.constant = cellHeightConstant * CGFloat(maxLine)
+    cell.updateHeightStatus.constant = isStatusAvailable == true ? cellHeightConstant : 0.0
+
+
+  return (cell.photocentricTitleHeight.constant + cell.updateHeightStatus.constant+cell.photocentricheadimageHeight.constant)
+
 }
 }

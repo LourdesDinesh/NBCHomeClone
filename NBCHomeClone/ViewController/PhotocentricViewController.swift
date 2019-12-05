@@ -12,8 +12,8 @@ class PhotocentricViewController: UIViewController {
     @IBOutlet weak var sampletableview: UITableView!
     var dumlabel : UILabel = UILabel()
     var maxNumberOfLines:Int!
-    static var data : [String] = ["sdsfsdd","tidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsfstidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsfsfstfjgfstfjg","tidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsfstidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsfsfstfjgfstfjg","titlfindfgfgfdsfgdd"]
-     static var status : [String] = ["","dgdsfg","",""]
+    static var data : [String] = ["sdsfsdd","tidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsfstidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsfsfstfjgfstfjg","tidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsrggrgrgrgrgfstidfsfdsdsfsfdsfdfsfsfdfdffsfdsfsfsfstfjgfstfjg","titlfindfgfgfdsfgdd"]
+     static var status : [String] = ["","","",""]
         var lineData : [Int] = [0]
     override func viewDidLoad() {
         super.viewDidLoad()
