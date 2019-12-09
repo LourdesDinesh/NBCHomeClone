@@ -15,7 +15,7 @@ class HomeScreenViewController: UIViewController {
     private let leadCellHeight:CGFloat = 200;
     private let listCellHeight:CGFloat = 111;
     private let headLineCentricCellHeight:CGFloat = 70;
-    private let CollectionViewTableViewCellHeight:CGFloat = 500;
+    private let CollectionViewTableViewCellHeight:CGFloat = 425;
     private var homeDataModel:HomeDataModel?
     let dispatchGroup:DispatchGroup = DispatchGroup();
     override func viewDidLoad() {

@@ -12,7 +12,7 @@ protocol photocentricLayoutDelegate {
 class photocentricLayout : UICollectionViewLayout {
     var delegate : photocentricLayoutDelegate!
     var noOfcolums = 2
-    var padding : CGFloat  = 6.0
+    var padding : CGFloat  = 12.0
     var cache = [UICollectionViewLayoutAttributes]()
     var contentheight : CGFloat = 0
     var width :CGFloat {
@@ -39,7 +39,7 @@ class photocentricLayout : UICollectionViewLayout {
                 print(item)
                 let indexPath = NSIndexPath(row: item, section: 0)
                 let height:CGFloat = delegate.collectionview(collectionview: collectionView!, heightAtindexpath: indexPath) - 2 * padding
-                let frame = CGRect(x: (xOff[column].truncatingRemainder(dividingBy: 2)==0) ? xOff[column] : xOff[column]+5, y: yOff[column] + 5, width: columnWidth, height: height)
+                let frame = CGRect(x: (xOff[column].truncatingRemainder(dividingBy: 2)==0) ? xOff[column] : xOff[column]+5, y: yOff[column] + 10, width: columnWidth, height: height)
                 print("000000")
                 print(frame)
                 let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath as IndexPath)

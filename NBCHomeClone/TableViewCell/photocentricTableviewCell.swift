@@ -84,11 +84,11 @@ extension photocentricTableviewCell : UICollectionViewDelegate,UICollectionViewD
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for: indexPath) as! PhotoCentricCollectionViewCell
             cell.setValue(value: items[indexPath.row + 1])
        //     cell.cellWidth.constant = cell.frame.size.width
-          cell.photocentricheadimageHeight.constant = cell.frame.size.height / 2
             cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
             let lines = cell.photoCentricCellTitlename.maxNumberOfLines
             maxLine = checkMaxLine(count: lines)
             cell.photocentricTitleHeight.constant = cellHeightConstant * CGFloat(maxLine)
+         cell.updateHeightStatus.constant = isStatusAvailable == true ? cellHeightConstant : 0.0
             return cell;
     }
 }
@@ -111,14 +111,17 @@ extension UILabel {
 extension photocentricTableviewCell : photocentricLayoutDelegate{
 func collectionview(collectionview: UICollectionView, heightAtindexpath indexPath: NSIndexPath) -> CGFloat {
     let cell = collectionview.dequeueReusableCell(withReuseIdentifier: "photoCentric" , for:    indexPath as IndexPath) as! PhotoCentricCollectionViewCell
+    cell.photocentricheadimageHeight.constant = 180
     cellHeightConstant = cell.photoCentricCellTitlename.frame.size.height
     print("2222")
-    print(maxLine)
+     print(cell.photocentricheadimageHeight.constant)
         cell.photocentricTitleHeight.constant = cellHeightConstant * CGFloat(maxLine)
-    cell.updateHeightStatus.constant = isStatusAvailable == true ? cellHeightConstant : 0.0
+   
 
-
-  return (cell.photocentricTitleHeight.constant + cell.updateHeightStatus.constant+cell.photocentricheadimageHeight.constant)
+    print("check")
+    print(cell.photocentricTitleHeight.constant + cell.updateHeightStatus.constant+cell.photocentricheadimageHeight.constant)
+  return (cell.photocentricTitleHeight.constant + cell.updateHeightStatus.constant+cell.photocentricheadimageHeight.constant + 24)
+   
 
 }
 }
