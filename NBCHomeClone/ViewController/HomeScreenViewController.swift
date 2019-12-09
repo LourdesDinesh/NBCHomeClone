@@ -107,6 +107,8 @@ extension HomeScreenViewController: UITableViewDataSource {
 //                    return 0
 //                }
             return CollectionViewTableViewCellHeight
+//                let cell = newsTableView.dequeueReusableCell(withIdentifier: photocentricTableviewCell.REUSABLE_IDENTIFIER) as! photocentricTableviewCell
+             
             default:
                 return 0
             }
