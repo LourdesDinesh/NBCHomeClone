@@ -16,13 +16,12 @@ class photocentricTableviewCell: UITableViewCell {
     var maxLine : Int = 0
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.photocentricCollectioview.dataSource = self
-        self.photocentricCollectioview.reloadData()
     }
     
     public func setValue(value:[Items]) {
         self.items = value
-    }
+        self.photocentricCollectioview.dataSource = self
+        self.photocentricCollectioview.reloadData()    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
