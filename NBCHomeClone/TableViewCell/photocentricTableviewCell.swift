@@ -17,17 +17,17 @@ class photocentricTableviewCell: UITableViewCell {
     var isStatusAvailable : Bool!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.photocentricCollectioview.dataSource = self
-        let layout = photocentricCollectioview.collectionViewLayout as? photocentricLayout
-        layout?.delegate = self
-        
-        self.photocentricCollectioview.reloadData()
     }
     
     public func setValue(value:[Items]) {
         self.items = value
         isStatusAvailable = checkStatus()
     }
+        self.photocentricCollectioview.dataSource = self
+        let layout = photocentricCollectioview.collectionViewLayout as? photocentricLayout
+        layout?.delegate = self
+        self.photocentricCollectioview.reloadData()    
+}
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
