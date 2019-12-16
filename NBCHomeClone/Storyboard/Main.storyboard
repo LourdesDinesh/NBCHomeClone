@@ -212,7 +212,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="This is a Headline centric cell and this cell can have a title with maximum of two lines">
                                                             <attributes>
-                                                                <font key="NSFont" metaFont="menuBar"/>
+                                                                <font key="NSFont" metaFont="menu" size="14"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -346,6 +346,9 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="178" translatesAutoresizingMaskIntoConstraints="NO" id="gYN-JH-geV">
                                                                         <rect key="frame" x="0.0" y="178" width="178" height="20.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="20.5" id="Gix-Vd-zJ5"/>
+                                                                        </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -390,6 +393,7 @@
                                                                 <outlet property="photocentricTitleHeight" destination="kue-jt-e4y" id="n9l-Wn-zqc"/>
                                                                 <outlet property="photocentricUpdateStatus" destination="gYN-JH-geV" id="EU4-cd-OYg"/>
                                                                 <outlet property="photocentricheadimageHeight" destination="rNh-g3-v2M" id="nSC-2f-3rX"/>
+                                                                <outlet property="updateHeightStatus" destination="Gix-Vd-zJ5" id="FJm-q1-Ejm"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>

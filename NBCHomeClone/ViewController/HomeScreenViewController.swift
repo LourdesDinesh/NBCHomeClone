@@ -15,7 +15,7 @@ class HomeScreenViewController: UIViewController {
     private let leadCellHeight:CGFloat = 200;
     private let listCellHeight:CGFloat = 111;
     private let headLineCentricCellHeight:CGFloat = 70;
-    private let CollectionViewTableViewCellHeight:CGFloat = 500;
+    private let CollectionViewTableViewCellHeight:CGFloat = 425;
     private var homeDataModel:HomeDataModel?
     let dispatchGroup:DispatchGroup = DispatchGroup();
     override func viewDidLoad() {
@@ -106,7 +106,9 @@ extension HomeScreenViewController: UITableViewDataSource {
 //                if(indexPath.row > 1) {
 //                    return 0
 //                }
-                return CollectionViewTableViewCellHeight
+            return CollectionViewTableViewCellHeight
+//                let cell = newsTableView.dequeueReusableCell(withIdentifier: photocentricTableviewCell.REUSABLE_IDENTIFIER) as! photocentricTableviewCell
+             
             default:
                 return 0
             }

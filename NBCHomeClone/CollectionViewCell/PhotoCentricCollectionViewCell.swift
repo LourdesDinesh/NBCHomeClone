@@ -20,7 +20,7 @@ class PhotoCentricCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var PhotocentricHeadImage: UIImageView!
     
     @IBOutlet weak var photocentricArticletype: UIImageView!
-    
+    @IBOutlet weak var updateHeightStatus: NSLayoutConstraint!
     var photoCentricHeight : CGFloat = 0.0 {
         didSet {
             updateCellHeight()
