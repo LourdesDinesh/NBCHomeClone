@@ -22,7 +22,6 @@ class photocentricTableviewCell: UITableViewCell {
     public func setValue(value:[Items]) {
         self.items = value
         isStatusAvailable = checkStatus()
-    }
         self.photocentricCollectioview.dataSource = self
         let layout = photocentricCollectioview.collectionViewLayout as? photocentricLayout
         layout?.delegate = self
