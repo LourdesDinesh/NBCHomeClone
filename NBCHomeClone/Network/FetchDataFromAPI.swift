@@ -8,7 +8,7 @@
 
 import Foundation
 class FetchDataFromAPI {
-    public class func getJsonArrayFromApi<T: Decodable>(fromUrl urlString:String, completion:@escaping (T)->Void) {
+    class func getJsonArrayFromApi<T: Decodable>(fromUrl urlString:String, completion:@escaping (T)->Void) {
         print("Fetching Data From API: \(urlString)")
         let urlObject:URL? = URL(string: urlString)
         URLSession.shared.dataTask(with: urlObject!) {(data, response, error) in

@@ -17,7 +17,7 @@ class LeadImageTableViewCell: UITableViewCell {
     @IBOutlet weak var gradientLayer: UIView!
     @IBOutlet weak var leadImage: UIImageView!
     
-    public static let REUSABLE_IDENTIFIER:String = "LeadImageTableViewCell";
+    static let REUSABLE_IDENTIFIER:String = "LeadImageTableViewCell";
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -27,7 +27,7 @@ class LeadImageTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    public func setValue(value:Items) {
+    func setValue(value:Items) {
         setImage(withUrl: value.thumbnailImageURL ?? "")
         setUpdatedTimestamp(value.shortTimestamp ?? "")
         setArticleTitle(value.title ?? "")

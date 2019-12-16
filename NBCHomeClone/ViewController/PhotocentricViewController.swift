@@ -37,7 +37,7 @@ class PhotocentricViewController: UIViewController {
             }
             return lineData1
         }
-    public func maxNumber(inArray array:[Int]) -> Int {
+    func maxNumber(inArray array:[Int]) -> Int {
         var max = 0
         for number in array {
             if(number > max) {

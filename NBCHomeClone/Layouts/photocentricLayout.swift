@@ -32,16 +32,12 @@ class photocentricLayout : UICollectionViewLayout {
             for column in 0..<noOfcolums{
                 xOff.append(CGFloat(column) * (columnWidth + padding) + padding)
             }
-            print(xOff)
             var yOff = [CGFloat](repeating: 0, count: noOfcolums)
             var column = 0
             for item in 0..<collectionView!.numberOfItems(inSection: 0){
-                print(item)
                 let indexPath = IndexPath(row: item, section: 0)
                 let height:CGFloat = delegate.collectionview(collectionview: collectionView!, heightAtindexpath: indexPath) - 2 * padding
                 let frame = CGRect(x: (xOff[column].truncatingRemainder(dividingBy: 2)==0) ? xOff[column] : xOff[column]+5, y: yOff[column] + 10, width: columnWidth, height: height)
-                print("000000")
-                print(frame)
                 let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath as IndexPath)
                 attributes.frame = frame
                 cache.append(attributes)

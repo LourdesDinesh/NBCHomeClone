@@ -26,12 +26,12 @@ class PhotoCentricCollectionViewCell: UICollectionViewCell {
             updateCellHeight()
         }
     }
-    
+    static let REUSABLE_IDENTIFIER = "PhotocentricCellReusableIdentifier"
     
     func updateCellHeight() {
         photocentricTitleHeight.constant = photoCentricHeight;
     }
-    public func setValue(value:Items) {
+    func setValue(value:Items) {
           setArticleTitle(title: value.title ?? "")
           setHeadlineImage(imageUrl: value.thumbnailImageURL ?? "")
           setUpdatedTime(value.shortTimestamp ?? "")

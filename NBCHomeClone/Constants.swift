@@ -9,9 +9,9 @@
 import Foundation
 struct  Constants {
     struct ArticleTypes {
-        public static let VIDEO:String = "Video";
-        public static let ARTICLE:String = "Article";
-        public static let VIDEO_RELEASE:String = "Video Release"
+        static let VIDEO:String = "Video";
+        static let ARTICLE:String = "Article";
+        static let VIDEO_RELEASE:String = "Video Release"
     }
     
     enum Templates:String {

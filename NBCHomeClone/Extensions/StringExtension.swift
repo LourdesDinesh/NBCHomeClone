@@ -8,7 +8,7 @@
 
 import Foundation
 extension String {
-    public func isOfFormat(_ format:String) -> Bool {
+    func isOfFormat(_ format:String) -> Bool {
         let emailPred = NSPredicate(format:"SELF MATCHES %@", format)
         return emailPred.evaluate(with: self)
     }

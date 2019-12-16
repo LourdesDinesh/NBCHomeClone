@@ -102,12 +102,7 @@ extension HomeScreenViewController: UITableViewDataSource {
             case Constants.Templates.HEADLINE_CENTRIC.rawValue:
                 return headLineCentricCellHeight
             case Constants.Templates.PHOTO_CENTRIC.rawValue:
-                //MARK:- Have to change this value
-//                if(indexPath.row > 1) {
-//                    return 0
-//                }
             return CollectionViewTableViewCellHeight
-//                let cell = newsTableView.dequeueReusableCell(withIdentifier: photocentricTableviewCell.REUSABLE_IDENTIFIER) as! photocentricTableviewCell
              
             default:
                 return 0
