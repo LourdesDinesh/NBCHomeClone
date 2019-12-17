@@ -28,7 +28,7 @@ class PhotoCenticCollectionViewCell: UICollectionViewCell {
     func setframes(con : Int){
       //  statusHeight.constant = isAvailble == true ? 20.5 : 0.0
        //statusHeight.constant = 20.5
-        titleHeight.constant = 20.5 * CGFloat(con)
+        titleHeight.constant = 20.7 * CGFloat(con)
      
     }
     
