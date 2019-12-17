@@ -76,8 +76,9 @@ extension HomeScreenViewController: UITableViewDataSource {
         } else {
             switch homeDataModel?.modules?[indexPath.section].template {
             case Constants.Templates.PHOTO_CENTRIC.rawValue:
-                let cell = newsTableView.dequeueReusableCell(withIdentifier: photocentricTableviewCell.REUSABLE_IDENTIFIER) as! photocentricTableviewCell
-                cell.setValue(value: ((homeDataModel?.modules?[indexPath.section].items)!))
+                let cell = newsTableView.dequeueReusableCell(withIdentifier: PhotoCenticTableViewCell.REUSABLE_IDENTIFIER) as! PhotoCenticTableViewCell
+               cell.setValue(value: ((homeDataModel?.modules?[indexPath.section].items)!))
+                  
                 return cell;
             case Constants.Templates.HEADLINE_CENTRIC.rawValue:
                 let cell = newsTableView.dequeueReusableCell(withIdentifier: HeadlineCentricTableViewCell.REUSABLE_IDENTITY) as! HeadlineCentricTableViewCell
@@ -102,7 +103,7 @@ extension HomeScreenViewController: UITableViewDataSource {
             case Constants.Templates.HEADLINE_CENTRIC.rawValue:
                 return headLineCentricCellHeight
             case Constants.Templates.PHOTO_CENTRIC.rawValue:
-            return CollectionViewTableViewCellHeight
+                return  homeDataModel?.modules?[indexPath.section].items.count ?? 0 >= 4 ? 500 : 250
              
             default:
                 return 0

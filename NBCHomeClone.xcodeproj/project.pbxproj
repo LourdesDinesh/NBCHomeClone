@@ -30,7 +30,7 @@
 		8F9222312388212F0097D290 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9222302388212F0097D290 /* GradientLayer.swift */; };
 		8F922233238940730097D290 /* PhotocentricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F922232238940730097D290 /* PhotocentricViewController.swift */; };
 		8F922235238945270097D290 /* PhotoCentricCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F922234238945270097D290 /* PhotoCentricCollectionViewCell.swift */; };
-		8F9222372389478C0097D290 /* photocentricTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9222362389478C0097D290 /* photocentricTableviewCell.swift */; };
+		8F9222372389478C0097D290 /* PhotoCenticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9222362389478C0097D290 /* PhotoCenticTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +59,7 @@
 		8F9222302388212F0097D290 /* GradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
 		8F922232238940730097D290 /* PhotocentricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotocentricViewController.swift; sourceTree = "<group>"; };
 		8F922234238945270097D290 /* PhotoCentricCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCentricCollectionViewCell.swift; sourceTree = "<group>"; };
-		8F9222362389478C0097D290 /* photocentricTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photocentricTableviewCell.swift; sourceTree = "<group>"; };
+		8F9222362389478C0097D290 /* PhotoCenticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCenticTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +168,7 @@
 				8F92222A2387F7D60097D290 /* SeeMoreTableViewCell.swift */,
 				8F92222C2387F7F60097D290 /* LeadImageTableViewCell.swift */,
 				5E390799238BD09800304580 /* HeadlineCentricTableViewCell.swift */,
-				8F9222362389478C0097D290 /* photocentricTableviewCell.swift */,
+				8F9222362389478C0097D290 /* PhotoCenticTableViewCell.swift */,
 				5E51B46B238C03F400F7763A /* SectionNameTableViewCell.swift */,
 			);
 			path = TableViewCell;
@@ -271,7 +271,7 @@
 				5E6B75A7238FC87A009B249A /* photocentricLayout.swift in Sources */,
 				5EE05E8C23865CD400B5277C /* StringExtension.swift in Sources */,
 				5E81FD00238545E2006BA434 /* SceneDelegate.swift in Sources */,
-				8F9222372389478C0097D290 /* photocentricTableviewCell.swift in Sources */,
+				8F9222372389478C0097D290 /* PhotoCenticTableViewCell.swift in Sources */,
 				8F922235238945270097D290 /* PhotoCentricCollectionViewCell.swift in Sources */,
 				5EE05E8F23866AFF00B5277C /* HomeDataModel.swift in Sources */,
 				5E9E08A32389170D007B994B /* ImageViewExtension.swift in Sources */,
