@@ -336,14 +336,14 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="153" height="191"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZjK-dt-eCy">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="153" height="150"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="153" height="140"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" constant="150" id="9jx-Zq-clH"/>
+                                                                                    <constraint firstAttribute="height" constant="140" id="9jx-Zq-clH"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rgs-Qj-6X1">
-                                                                                <rect key="frame" x="0.0" y="150" width="153" height="41"/>
+                                                                                <rect key="frame" x="0.0" y="140" width="153" height="51"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSi-Ut-zTc">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="153" height="20.5"/>
@@ -356,7 +356,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bo-fV-UqQ">
-                                                                                        <rect key="frame" x="0.0" y="20.5" width="153" height="20.5"/>
+                                                                                        <rect key="frame" x="0.0" y="20.5" width="153" height="30.5"/>
                                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.5" id="qDI-OR-Wxw"/>
