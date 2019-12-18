@@ -351,7 +351,7 @@
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.5" id="V2s-4G-LYk"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
@@ -361,7 +361,7 @@
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.5" id="qDI-OR-Wxw"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
