@@ -37,7 +37,7 @@ class PhotocentricViewController: UIViewController {
             }
             return lineData1
         }
-    public func maxNumber(inArray array:[Int]) -> Int {
+    func maxNumber(inArray array:[Int]) -> Int {
         var max = 0
         for number in array {
             if(number > max) {
@@ -63,9 +63,9 @@ extension PhotocentricViewController : UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell" , for:    indexPath) as! photocentricTableviewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell" , for:    indexPath) as! PhotoCenticTableViewCell
   //  cell.tableviewCellHeight.constant = view.frame.height/1.7
-        cell.maxLine = maxNumberOfLines;
+   //     cell.maxLine = maxNumberOfLines;
         return cell
     }
 }

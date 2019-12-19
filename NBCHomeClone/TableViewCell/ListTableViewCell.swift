@@ -26,7 +26,7 @@ class ListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func setValue(value:Items) {
+    func setValue(value:Items) {
         setArticleTitle(title: value.title ?? "")
         setHeadlineImage(imageUrl: value.thumbnailImageURL ?? "")
         setUpdatedTime(value.shortTimestamp ?? "")

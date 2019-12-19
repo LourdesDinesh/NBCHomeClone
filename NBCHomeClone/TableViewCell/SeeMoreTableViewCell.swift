@@ -9,7 +9,7 @@
 import UIKit
 
 class SeeMoreTableViewCell: UITableViewCell {
-    public static let REUSABLE_IDENTIFIER:String = "seeMoreCellReusableIdentifier";
+    static let REUSABLE_IDENTIFIER:String = "seeMoreCellReusableIdentifier";
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

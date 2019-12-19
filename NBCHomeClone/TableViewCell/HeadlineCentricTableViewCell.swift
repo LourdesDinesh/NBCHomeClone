@@ -9,7 +9,7 @@
 import UIKit
 
 class HeadlineCentricTableViewCell: UITableViewCell {
-    public static let REUSABLE_IDENTITY:String = "headlineCentricTableViewCell";
+    static let REUSABLE_IDENTITY:String = "headlineCentricTableViewCell";
     @IBOutlet weak var articleTypeImage: UIImageView!
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var updatedTime: UILabel!
@@ -23,7 +23,7 @@ class HeadlineCentricTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    public func setValue(value: Items) {
+    func setValue(value: Items) {
         setHeadline(withTitle: value.title ?? "")
         setArticleType(value.typeName)
         setUpdatedTime(value.shortTimestamp ?? "")

@@ -1,51 +1,52 @@
 //
-//  PhotoCentricCollectionViewCell.swift
-//  NBCHomeClone
+//  PhotoCenticCollectionViewCell.swift
+//  checkphotocentric
 //
-//  Created by Ponkumaran on 23/11/19.
-//  Copyright © 2019 Tringapps. All rights reserved.
+//  Created by Ponkumar's Mac on 10/12/19.
+//  Copyright © 2019 Ponkumar's Mac. All rights reserved.
 //
 
 import UIKit
 
-class PhotoCentricCollectionViewCell: UICollectionViewCell {
+class PhotoCenticCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    @IBOutlet weak var statusHeight: NSLayoutConstraint!
+    @IBOutlet weak var titleHeight: NSLayoutConstraint!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var title: UILabel!
+
     
-    @IBOutlet weak var photocentricArticleTitle: UILabel!
-    @IBOutlet weak var photocentricUpdateStatus: UILabel!
-    @IBOutlet weak var photocentricheadimageHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var photocentricTitleHeight: NSLayoutConstraint!
-    @IBOutlet weak var cellWidth: NSLayoutConstraint!
-    @IBOutlet weak var photoCentricCellTitlename: UILabel!
-    @IBOutlet weak var PhotocentricHeadImage: UIImageView!
-    
-    @IBOutlet weak var photocentricArticletype: UIImageView!
-    @IBOutlet weak var updateHeightStatus: NSLayoutConstraint!
-    var photoCentricHeight : CGFloat = 0.0 {
-        didSet {
-            updateCellHeight()
-        }
+  
+    //func setView(data : DataModel){
+//
+//    self.image.image = data.image
+//    self.status.text = data.status
+//    self.title.text  = data.title
+//}
+//
+    func setframes(con : Int){
+      //  statusHeight.constant = isAvailble == true ? 20.5 : 0.0
+       //statusHeight.constant = 20.5
+        titleHeight.constant = 20.7 * CGFloat(con)
+     
     }
     
-    
-    func updateCellHeight() {
-        photocentricTitleHeight.constant = photoCentricHeight;
-    }
-    public func setValue(value:Items) {
+    func setValue(value:Items) {
           setArticleTitle(title: value.title ?? "")
           setHeadlineImage(imageUrl: value.thumbnailImageURL ?? "")
           setUpdatedTime(value.shortTimestamp ?? "")
       }
       
          private func setUpdatedTime(_ time:String) {
-             photocentricUpdateStatus.text = time;
+            self.status.text = time;
          }
          
          private func setArticleTitle(title:String) {
-             photocentricArticleTitle.text = title;
+              self.title.text  = title;
          }
          
          private func setHeadlineImage(imageUrl:String) {
-             PhotocentricHeadImage.loadImageFromURLString(imageUrl);
+            self.image.loadImageFromURLString(imageUrl);
          }
 }

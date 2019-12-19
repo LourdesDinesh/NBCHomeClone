@@ -1,10 +1,3 @@
-//
-//  ImageViewExtension.swift
-//  NBCHomeClone
-//
-//  Created by Tringapps on 11/23/19.
-//  Copyright © 2019 Tringapps. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -12,6 +5,12 @@ import UIKit
 let imageCache = NSCache<AnyObject, AnyObject>()
 extension UIImageView {
     func loadImageFromURLString(_ urlString: String) {
+        if let cachedImageToSet = imageCache.object(forKey: urlString as NSString) as? UIImage {
+            DispatchQueue.main.async { [weak self] in
+                self?.image = cachedImageToSet
+            }
+            return
+        }
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
             return
@@ -22,9 +21,11 @@ extension UIImageView {
                 print("Error ", error!)
                 return
             }
+            let imageFromUrl:UIImage = UIImage(data: data!) ?? UIImage()
+            imageCache.setObject(imageFromUrl, forKey: urlString as NSString)
 
             DispatchQueue.main.async { [weak self] in
-                self?.image = UIImage(data: data!)
+                self?.image = imageFromUrl
             }
 
         }.resume()
