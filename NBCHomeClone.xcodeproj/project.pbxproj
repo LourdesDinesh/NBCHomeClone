@@ -10,6 +10,9 @@
 		5E390798238BCA5D00304580 /* HeadlineCentricCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E390797238BCA5D00304580 /* HeadlineCentricCell.storyboard */; };
 		5E39079A238BD09800304580 /* HeadlineCentricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E390799238BD09800304580 /* HeadlineCentricTableViewCell.swift */; };
 		5E39079F238BE0ED00304580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E390795238BABC400304580 /* Main.storyboard */; };
+		5E3D001923AA58E500623493 /* screenShotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D001823AA58E500623493 /* screenShotUITests.swift */; };
+		5E3D002223ABACF000623493 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D002023ABAA1000623493 /* SnapshotHelper.swift */; };
+		5E3DFFE423AA405800623493 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DFFE323AA405800623493 /* DetailedViewController.swift */; };
 		5E51B46A238BE6BA00F7763A /* ListTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E51B469238BE6BA00F7763A /* ListTableViewCell.storyboard */; };
 		5E51B46C238C03F400F7763A /* SectionNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51B46B238C03F400F7763A /* SectionNameTableViewCell.swift */; };
 		5E51B46E238C072700F7763A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51B46D238C072700F7763A /* Constants.swift */; };
@@ -33,10 +36,25 @@
 		8F9222372389478C0097D290 /* PhotoCenticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9222362389478C0097D290 /* PhotoCenticTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5E3D001B23AA58E500623493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E81FCF2238545E2006BA434 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E81FCF9238545E2006BA434;
+			remoteInfo = NBCHomeClone;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5E390795238BABC400304580 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5E390797238BCA5D00304580 /* HeadlineCentricCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeadlineCentricCell.storyboard; sourceTree = "<group>"; };
 		5E390799238BD09800304580 /* HeadlineCentricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineCentricTableViewCell.swift; sourceTree = "<group>"; };
+		5E3D001623AA58E500623493 /* screenShotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = screenShotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E3D001823AA58E500623493 /* screenShotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenShotUITests.swift; sourceTree = "<group>"; };
+		5E3D001A23AA58E500623493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E3D002023ABAA1000623493 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		5E3DFFE323AA405800623493 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		5E51B469238BE6BA00F7763A /* ListTableViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListTableViewCell.storyboard; sourceTree = "<group>"; };
 		5E51B46B238C03F400F7763A /* SectionNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionNameTableViewCell.swift; sourceTree = "<group>"; };
 		5E51B46D238C072700F7763A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -63,6 +81,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5E3D001323AA58E500623493 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E81FCF7238545E2006BA434 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,8 +103,19 @@
 			children = (
 				5E81FD01238545E2006BA434 /* HomeScreenViewController.swift */,
 				8F922232238940730097D290 /* PhotocentricViewController.swift */,
+				5E3DFFE323AA405800623493 /* DetailedViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5E3D001723AA58E500623493 /* screenShotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5E3D002023ABAA1000623493 /* SnapshotHelper.swift */,
+				5E3D001823AA58E500623493 /* screenShotUITests.swift */,
+				5E3D001A23AA58E500623493 /* Info.plist */,
+			);
+			path = screenShotUITests;
 			sourceTree = "<group>";
 		};
 		5E6B75A5238FC84F009B249A /* Layouts */ = {
@@ -94,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				5E81FCFC238545E2006BA434 /* NBCHomeClone */,
+				5E3D001723AA58E500623493 /* screenShotUITests */,
 				5E81FCFB238545E2006BA434 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				5E81FCFA238545E2006BA434 /* NBCHomeClone.app */,
+				5E3D001623AA58E500623493 /* screenShotUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,6 +226,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5E3D001523AA58E500623493 /* screenShotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E3D001D23AA58E500623493 /* Build configuration list for PBXNativeTarget "screenShotUITests" */;
+			buildPhases = (
+				5E3D001223AA58E500623493 /* Sources */,
+				5E3D001323AA58E500623493 /* Frameworks */,
+				5E3D001423AA58E500623493 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E3D001C23AA58E500623493 /* PBXTargetDependency */,
+			);
+			name = screenShotUITests;
+			productName = screenShotUITests;
+			productReference = 5E3D001623AA58E500623493 /* screenShotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		5E81FCF9238545E2006BA434 /* NBCHomeClone */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E81FD0E238545E4006BA434 /* Build configuration list for PBXNativeTarget "NBCHomeClone" */;
@@ -215,6 +271,10 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = Tringapps;
 				TargetAttributes = {
+					5E3D001523AA58E500623493 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 5E81FCF9238545E2006BA434;
+					};
 					5E81FCF9238545E2006BA434 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -234,11 +294,19 @@
 			projectRoot = "";
 			targets = (
 				5E81FCF9238545E2006BA434 /* NBCHomeClone */,
+				5E3D001523AA58E500623493 /* screenShotUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5E3D001423AA58E500623493 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E81FCF8238545E2006BA434 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +323,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5E3D001223AA58E500623493 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E3D001923AA58E500623493 /* screenShotUITests.swift in Sources */,
+				5E3D002223ABACF000623493 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E81FCF6238545E2006BA434 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,11 +353,20 @@
 				5EE05E8F23866AFF00B5277C /* HomeDataModel.swift in Sources */,
 				5E9E08A32389170D007B994B /* ImageViewExtension.swift in Sources */,
 				8F922233238940730097D290 /* PhotocentricViewController.swift in Sources */,
+				5E3DFFE423AA405800623493 /* DetailedViewController.swift in Sources */,
 				5EE05E882386587F00B5277C /* FetchDataFromAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E3D001C23AA58E500623493 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E81FCF9238545E2006BA434 /* NBCHomeClone */;
+			targetProxy = 5E3D001B23AA58E500623493 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5E81FD08238545E4006BA434 /* LaunchScreen.storyboard */ = {
@@ -294,6 +380,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5E3D001E23AA58E500623493 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = screenShotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ponkumar-s-Mac.screenShotUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NBCHomeClone;
+			};
+			name = Debug;
+		};
+		5E3D001F23AA58E500623493 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = screenShotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ponkumar-s-Mac.screenShotUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NBCHomeClone;
+			};
+			name = Release;
+		};
 		5E81FD0C238545E4006BA434 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -449,6 +571,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5E3D001D23AA58E500623493 /* Build configuration list for PBXNativeTarget "screenShotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E3D001E23AA58E500623493 /* Debug */,
+				5E3D001F23AA58E500623493 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5E81FCF5238545E2006BA434 /* Build configuration list for PBXProject "NBCHomeClone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

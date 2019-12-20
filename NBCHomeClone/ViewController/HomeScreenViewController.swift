@@ -110,6 +110,14 @@ extension HomeScreenViewController: UITableViewDataSource {
             }
         }
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let desc = self.storyboard?.instantiateViewController(withIdentifier: "DetailedViewController") as! DetailedViewController
+       // desc.setValue(value: (homeDataModel?.modules?[indexPath.section].items[indexPath.row])!)
+        desc.data = (homeDataModel?.modules?[indexPath.section].items[indexPath.row])!
+          self.navigationController?.pushViewController(desc, animated: true)
+    }
 }
 
 extension HomeScreenViewController:UITableViewDelegate {
