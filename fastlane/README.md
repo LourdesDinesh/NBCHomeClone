@@ -21,6 +21,16 @@ or alternatively using `brew cask install fastlane`
 fastlane ios screenshots
 ```
 Generate new localized screenshots
+### ios Upload_To_AppCenter
+```
+fastlane ios Upload_To_AppCenter
+```
+Upload App To Appcenter
+### ios Build_Application
+```
+fastlane ios Build_Application
+```
+Build Application
 
 ----
 

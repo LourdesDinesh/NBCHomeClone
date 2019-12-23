@@ -21,3 +21,36 @@ platform :ios do
     capture_screenshots(scheme: "NBCHomeClone")
   end
 end
+
+
+platform :ios do
+  desc "Upload App To Appcenter"
+  lane :Upload_To_AppCenter do
+    appcenter_upload(
+    api_token: "43c1127a090fa03f3d403bb105b21feb539f5c01",
+    owner_name: "ponkumaran",
+    owner_type: "user", # Default is user - set to organization for appcenter organizations
+    app_name: "HomeClone",
+    file: "/Users/tringapps/Desktop/HomeClone.ipa",
+    notify_testers: false # Set to false if you don't want to notify testers of your new release (default: `false`)
+  )
+  end
+end
+
+
+  platform :ios do
+  desc "Build Application"
+  lane :Build_Application do
+    build_ios_app(
+      #workspace: "NBCHomeClone.xcodeproj",
+      export_method: "enterprise",
+      configuration: "Debug",
+      scheme: "NBCHomeClone",
+      silent: true,
+      clean: true,
+      output_directory: "/Users/tringapps/Desktop", # Destination directory. Defaults to current directory.
+      output_name: "HomeClone.ipa",       # specify the name of the .ipa file to generate (including file extension)
+      sdk: "iOS 13.2"        # use SDK as the name or path of the base SDK when building the project.
+    )
+  end
+end
