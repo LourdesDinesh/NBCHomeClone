@@ -3,12 +3,11 @@
 
    class PhotoCenticTableViewCell: UITableViewCell {
        static let REUSABLE_IDENTIFIER:String = "photocentricTableViewCellReusableIdentifier";
-       @IBOutlet weak var collectionViewOutlet: UICollectionView!
-    //   var titleArray = [String]()
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewOutlet: UICollectionView!
        private var items:[Items]!
        var isStatusAvailable : Bool!
        var dumlabel : UILabel = UILabel()
-       var maxNumberOfLines:Int!
        var heightForRow = [Int]()
        var dataCount = 0
        override func awakeFromNib() {
@@ -17,10 +16,8 @@
        }
 
        public func setupValues() {
-            
-           setupDummyLabel()
+           dumlabel.frame.size.width = UIScreen.main.bounds.width/2
            heightForRow = findnoLine()
-           heightForRow = findHeightForRow(heightArray: heightForRow)
        }
      
    func setValue(value:[Items]) {
@@ -69,31 +66,21 @@
    }
 
    extension  PhotoCenticTableViewCell {
-       func setupDummyLabel() {
-           dumlabel.frame.size.width = UIScreen.main.bounds.width/2
-       }
-       
            func findnoLine() -> [Int]
            {
-               var lineData1 = [Int]()
-            for item in items{
-                let data1 = item.title
-                   dumlabel.text = data1
-                   let count = dumlabel.maxNumberOfLines
-                   lineData1.append(count)
-            }
-               return lineData1
-           }
-
-         func findHeightForRow(heightArray : [Int] ) ->[Int] {
              var heightForRow = [Int]()
-             let count = heightArray.count
-             heightForRow =  count >= 4 ? maxNumber(array: heightArray, count: 2) : maxNumber(array: heightArray, count: 1)
-            print("@.....\(heightForRow)")
-             return heightForRow
-         }
+               var lineCount = [Int]()
+            for item in items{
+                 dumlabel.text = item.title
+                   let count = dumlabel.maxNumberOfLines
+                   lineCount.append(count)
+            }
+              let count = lineCount.count
+              heightForRow =  count >= 4 ? maxNumber(array: lineCount, rowCount: 2) : maxNumber(array: lineCount, rowCount: 1)
+              return heightForRow
+           }
        
-       public func maxNumber(array:[Int] ,count:Int) -> [Int] {
+       public func maxNumber(array:[Int] ,rowCount count:Int) -> [Int] {
               var heightForRow = [Int]()
            if count == 1{
               heightForRow.append(array[count] >= array[count-1] ? array[count] : array[count-1])
@@ -139,6 +126,7 @@
         cell.setframes(con: heightForRow[0])
        }
      //cell.statusHeight.constant = isStatusAvailable == true ? cell.statusHeight.constant : 0
+    collectionViewHeight.constant = 2 * (cell.titleHeight.constant + cell.statusHeight.constant + cell.imageHeight.constant) + 15
        return (cell.titleHeight.constant + cell.statusHeight.constant + cell.imageHeight.constant)
 
    }

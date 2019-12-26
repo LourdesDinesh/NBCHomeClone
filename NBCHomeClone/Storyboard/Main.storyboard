@@ -313,16 +313,19 @@
                                             <outlet property="videoLabel" destination="k0x-eF-1JR" id="OFe-gs-0We"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="photocentricTableViewCellReusableIdentifier" rowHeight="473" id="hUs-6f-UFx" customClass="PhotoCenticTableViewCell" customModule="NBCHomeClone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="560.5" width="414" height="473"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="photocentricTableViewCellReusableIdentifier" id="hUs-6f-UFx" customClass="PhotoCenticTableViewCell" customModule="NBCHomeClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="560.5" width="414" height="425.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hUs-6f-UFx" id="eVa-xi-BlO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="473"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="425.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WRY-0i-3jW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="473"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="425.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="425" id="yHQ-qQ-aek"/>
+                                                    </constraints>
                                                     <collectionViewLayout key="collectionViewLayout" id="5Ms-y6-7LD" customClass="photocentricLayout" customModule="NBCHomeClone" customModuleProvider="target"/>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="PhotocentricCellReusableIdentifier" id="Idf-xV-evh" customClass="PhotoCenticCollectionViewCell" customModule="NBCHomeClone" customModuleProvider="target">
@@ -400,6 +403,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="collectionViewHeight" destination="yHQ-qQ-aek" id="JJV-Ff-yOm"/>
                                             <outlet property="collectionViewOutlet" destination="WRY-0i-3jW" id="31s-Vj-gKq"/>
                                         </connections>
                                     </tableViewCell>

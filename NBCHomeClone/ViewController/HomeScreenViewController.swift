@@ -21,6 +21,7 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("HomeViewController loaded");
+        newsTableView.estimatedRowHeight = 500
         setDataSourceAndDelegate();
         fetchData();
         dispatchGroup.notify(queue: .main, execute: { [weak self] in
@@ -103,8 +104,8 @@ extension HomeScreenViewController: UITableViewDataSource {
             case Constants.Templates.HEADLINE_CENTRIC.rawValue:
                 return headLineCentricCellHeight
             case Constants.Templates.PHOTO_CENTRIC.rawValue:
-                return  homeDataModel?.modules?[indexPath.section].items.count ?? 0 >= 4 ? 500 : 250
-             
+              //  return  homeDataModel?.modules?[indexPath.section].items.count ?? 0 >= 4 ? 500 : 250
+                return UITableView.automaticDimension
             default:
                 return 0
             }
